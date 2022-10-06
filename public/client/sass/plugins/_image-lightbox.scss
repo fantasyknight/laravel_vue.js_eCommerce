@@ -1,0 +1,28 @@
+.porto-light-box {
+    img.vue-lb-modal-image {
+        transition-duration: .1s !important;
+
+        &[lazy="loading"] {
+            width: calc(100vh - 140px);
+            height: calc(100vh - 140px);
+        }
+    }
+
+    .vue-lb-info {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .vue-lb-footer {
+        display: none;
+    }
+
+    .vue-lb-info {
+        display: none;
+    }
+
+    .vue-lb-header {
+        display: none;
+    }
+}

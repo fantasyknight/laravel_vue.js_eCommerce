@@ -1,0 +1,33 @@
+.card-info.media-info {
+    .card-header {
+        padding: 10px 10px 10px 20px;
+    }
+
+    .card-title {
+        font-size: 1rem;
+    }
+
+    .card-actions {
+        top: 8px;
+    }
+}
+
+.info-title {
+    margin: 0 10px 0 0;
+    font-size: .85rem;
+}
+
+.info-text {
+    font-size: .85rem;
+    color: #495957;
+}
+
+.edit-media-form {
+    video, img {
+        max-height: 500px;
+        max-width: 500px;
+        width: 100%;
+        height: auto;
+    }
+}
+ 

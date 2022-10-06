@@ -1,0 +1,75 @@
+.http-error {
+	padding: 50px 0;
+    margin-bottom: 5rem;
+
+    h2 {
+        font-size: 140px;
+	    font-weight: 700;
+	    line-height: 140px;
+	    color: #212529;
+    }
+
+    h4 {
+    	font-size: 2rem;
+    }
+
+    p {
+    	color: #777;
+	    line-height: 26px;
+	    margin: 0 0 20px;
+	    font-size: 1.4em;
+	    line-height: 36px;
+    }
+
+    ul.nav-item {
+    	margin: 0;
+	    padding: 0;
+	    display: block;
+	    position: relative;
+    }
+
+    ul.nav-link {
+        transition: background 0.1s;
+	    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+	    padding: 8px 0 8px 22px;
+	    display: block;
+	    color: #666;
+	    font-size: 0.9em;
+	    text-decoration: none;
+	    line-height: 20px;
+    }
+
+    ul.nav-list li, ul[class^="wsp-"] li {
+        margin: 0;
+        padding: 0;
+        display: block;
+        flex: 0 0 100%;
+        position: relative;
+    }
+    
+    ul.nav-list li a, ul[class^="wsp-"] li a {
+        transition: background 0.1s;
+        padding: 8px 0 8px 20px;
+        display: block;
+        color: #666;
+        font-size: 0.9em;
+        text-decoration: none;
+        line-height: 20px;
+        border-bottom: 1px solid rgba(0,0,0,0.06);
+
+        &::before {
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 900;
+            content: "\f054";
+            display: inline-block;
+            position: absolute;
+            top: 9px;
+            left: 9px;
+            opacity: .7;
+            font-size: .45rem;
+        }
+        &:hover::before {
+            animation: arrowLeftRight .6s linear infinite;
+        }
+    }
+}

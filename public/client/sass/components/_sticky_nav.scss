@@ -1,0 +1,57 @@
+/* Sticky Nav bar */
+.sticky-navbar {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 100%;
+    z-index: 1000;
+    display: flex;
+    background-color: #fff;
+    border-top: 1px solid #e7e7e7;
+    opacity: 0;
+    visibility: hidden;
+    transition: all .3s ease;
+
+    &.fixed {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(-100%);
+    }
+
+    .mmenu-active &, .sidebar-opened & {
+        transform: translateX(260px);
+    }
+}
+
+.sticky-icon {
+    flex: 0 0 20%;
+    max-width: 20%;
+    padding: 1rem 0;
+
+    a {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: var(--primary-color-dark);
+        font-family: var(--second-font-family);
+        font-size: 9px;
+        font-weight: 700;
+        text-transform: uppercase;
+    }
+
+    i {
+        font-size: 27px;
+    }
+
+    .cart-count {
+        top: 2px;
+        right: -6px;
+        box-shadow: -1px 1px 2px 0 rgba(0,0,0,0.3);
+        font-style: normal;
+    }
+
+    &:not(:last-child) {
+        border-right: 1px solid #e7e7e7;
+    }
+}

@@ -1,0 +1,95 @@
+// Header Type Two
+
+.header.header-two {
+    &.header-transparent .sticky-header {
+        background: transparent;
+
+        &.fixed {
+            background: #fff;
+        }
+    }
+    
+    .header-middle {
+        padding-top: 3.2rem;
+        padding-bottom: 2.5rem;
+        color: #000;
+    }
+    
+    // Menu
+    .main-nav {
+        margin-left: 3vw;
+    }
+
+    // Badge
+    .tip-top {
+        top: -4px;
+        left: 100%;
+    }
+
+    // Header Icons
+    .header-icon {
+        margin-left: -1px;
+        margin-right: 23px;
+        font-size: 26px;
+
+        .icon-user-2 {
+            font-size: 24px;
+        }
+    }
+
+    // Cart Dropdown
+    .cart-dropdown .dropdown-toggle i {
+        font-size: 26px;
+        transform: translateY(-1px);
+    }
+
+    .cart-count {
+        width: 15px;
+        font-size: 0.963rem;
+        line-height: 15px;
+    }
+
+    // Search
+    .header-search {
+        margin-top: 2px;
+        margin-right: 23px;
+    }
+
+    .live-search-list {
+        top: calc( 100% + 5px );
+    }
+
+    .search-toggle i:before {
+        font-size: 21px;
+        font-weight: 600;
+    }
+
+    @include only_for_ie() {
+        .header-search-wrapper {
+            margin-top: 9px;
+        }
+    }
+
+    @include only_for_edge() {
+        .header-search-wrapper {
+            margin-top: 9px;
+        }
+    }
+
+    // Menu Toggler
+    .mobile-menu-togger {
+        padding: 1.2rem .5rem .8rem;
+    }
+
+    .header-middle.fixed {
+        padding: .8rem 0;
+    }
+}
+
+// Responsive
+
+.header.header-two {
+    @include mq(lg, max) {
+
+    }
+}

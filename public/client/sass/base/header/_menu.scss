@@ -1,0 +1,564 @@
+// Menu
+
+// # Contents
+// 1. Menu Base
+// 2. Menu
+	// 2.1) Menu - Item
+	// 2.2) Menu - Main Item
+	// 2.3) Menu - Dropdown Arrow
+// 3. Mega Menu
+// 4. Main Nav Menu
+// 5. Menu Tip
+
+// # Variables
+
+@include set-default(
+	(
+		menu: (
+			color: #777,
+			background: false,
+			active-color: false,
+			active-background: #f4f4f4,
+
+			mega: (
+				width-4col: 770px,
+				width-3col: 600px,
+				width-2col: 450px,
+				color: false,
+				background: false,
+				active-color: false,
+				active-background: transparent,
+			),
+
+			nolink: (
+				color: #333,
+				background: false,
+			),
+
+			top: (
+				color: #555,
+				background: false,
+				active-color: var(--primary-color),
+				active-background: transparent,
+				letter-spacing: -.01em
+			),
+			
+			main: (
+				font-size: 12px,
+				color: false,
+				background: false,
+				active-color: false,
+				active-background: false,
+	
+				mega: (
+					color: false,
+					background: false,
+					active-color: false,
+					active-background: false,
+				),
+
+				nolink: (
+					color: false,
+					background: false,
+					font-weight: false,
+				),
+	
+				top: (
+					cut-start-end: true,
+
+					color: false,
+					background: false,
+					active-color: false,
+					active-background: false,
+
+					font-family: false,
+					letter-spacing: -.01em,
+					padding: 17px 0,
+					space: 2.9rem
+				)
+			),
+		)
+	)
+);
+
+// 1. Menu Base
+
+.menu,
+.menu li,
+.menu ul,
+.menu ol {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+// 2. Menu
+.menu {
+	font-size: 12px;
+	font-weight: 600;
+	line-height: 1.5;
+	@include clearfix;
+
+	.show > ul,
+	.show > .megamenu {
+		opacity: 1;
+	}
+
+// 2.1) Menu - Item
+
+	li {
+		// Sub Item Anchor
+		> a {
+			display: block;
+			padding: .8rem 1.8rem;
+			transition: .2s ease-out;
+
+			@include css(color, menu, color);
+			@include css(background, menu, background);
+		}
+
+		// Active Anchor
+		&:hover,
+		&.show,
+		&.active {
+			> a {
+				@include css(color, menu, active-color);
+				@include css(background, menu, active-background);
+			}
+
+		}
+	}
+
+	// 2.2) Menu - Main Item
+	> li {
+		float: left;
+		position: relative;
+		margin-right: 2.8rem;
+
+		// Anchor
+		> a {
+			padding: 1rem 0;
+			font-size: 13px;
+			font-weight: 400;
+
+			@include css(color, menu, top, color);
+			@include css(background, menu, top, background);
+		}
+
+		// Active Anchor
+		&:hover,
+		&.show,
+		&.active {
+			> a {
+				@include css(color, menu, top, active-color);
+				@include css(background, menu, top, active-background);
+			}
+		}
+
+	// 2.3) Menu - Dropdown Triangle
+		> .sf-with-ul:before {
+			content: '';
+			position: absolute;
+			z-index: 1000;
+			left: 50%;
+			bottom: 0;
+			margin-left: -14px;
+			border: 10px solid;
+			border-color: transparent transparent #fff;
+			opacity: 0;
+			transition: opacity ease-in .08s;
+		}
+
+		&.show > .sf-with-ul:before {
+			opacity: 1;
+			visibility: visible;
+		}
+
+		&.float-right:last-child {
+			margin-right: 3px;
+		}
+	}
+
+// 3. Mega Menu
+	.megamenu {
+		display: none;
+		position: absolute;
+		z-index: 1041;
+		background-color: #fff;
+		box-shadow: 0 1rem 2.5rem rgba(0, 0, 0, .15);
+		border: 1px solid #eee;
+		border-top: 3px solid var(--primary-color);
+		left: 15px;
+		padding: 10px 20px;
+		@include css(width, menu, mega, width-4col);
+
+		&.megamenu-2cols {
+			@include css(width, menu, mega, width-2col)
+		}
+		
+		&.megamenu-3cols {
+			@include css(width, menu, mega, width-3col);
+		}
+
+		.row > div {
+			padding-top: 1.5rem;
+		}
+
+		img {
+			width: 300px;
+			height: 100%;
+			object-fit: cover;
+		}
+
+		.submenu {
+			margin: 0;
+			padding-top: 0;
+			border-top: none;
+			display: block;
+			position: static;
+			box-shadow: none;
+			min-width: 0;
+
+			a {
+				padding: 7px 8px 8px 0;
+
+				@include css(color, menu, mega, color);
+				@include css(background, menu, mega, background);
+			}
+
+			li:hover a {
+				text-decoration: underline;
+				@include css(color, menu, mega, active-color);
+				@include css(background, menu, mega, active-background);
+			}
+		}
+	}
+
+	.nolink {
+		cursor: default;
+		display: inline-block;
+		padding-bottom: 6px;
+		font-weight: 700;
+
+		@include css(color, menu, nolink, color);
+		@include css(background, menu, nolink, background);
+	}
+
+	// Sub Menu
+	ul {
+		display: none;
+		position: absolute;
+		z-index: 1041;
+		min-width: 200px;
+		padding: 5px 0;
+		border-top: 3px solid var(--primary-color);
+		top: 100%;
+		left: 0;
+		z-index: 99;
+		background-color: #fff;
+		box-shadow: 0 29px 29px rgba(0, 0, 0, .1);
+
+		ul {
+			top: -5px;
+			left: 100%;
+		}
+	}
+
+	// Dropdown Arrow
+	&.sf-arrows {
+
+		.sf-with-ul + ul > li {
+			position: relative;
+		}
+
+		// Sub Menu Anchor's dropdown icon
+		.sf-with-ul:after {
+			position: absolute;
+			right: 1rem;
+			content: '\e81a';
+			font-family: 'porto';
+		}
+
+		// Main Anchor's dropdown icon
+		> li > .sf-with-ul:after {
+			content: '\e81c';
+			position: static;
+			margin-left: 5px;
+			font-weight: 400;
+		}
+	}
+}
+
+// 4. Main Nav - Menu
+
+.main-nav .menu {
+	text-transform: uppercase;
+	@include css( font-size, menu, main, font-size );
+	@include css( font-family, menu, main, font-family );
+
+	// 4.1) Header Menu Item
+	li {
+		// Anchor
+		> a {
+			@include css(color, menu, main, color);
+			@include css(background, menu, main, background);
+		}
+
+		// Active Anchor
+		&:hover>a,
+		&.show>a,
+		&.active>a {
+			@include css(color, menu, main, active-color);
+			@include css(background, menu, main, active-background);
+		}
+
+		&:hover > ul {
+			display: block;
+		}
+	}
+
+	// 4.2) Header Menu Main Item
+	> li {
+		@include css( margin-right, menu, main, top, space );
+
+		// Anchor
+		> a {
+			font-size: 12px;
+			font-weight: 700;
+			border-bottom: 3px solid transparent;
+			@include css( padding, menu, main, top, padding );
+			@include css( letter-spacing, menu, main, top, letter-spacing );
+			@include css( color, menu, main, top, color );
+			@include css( background, menu, main, top, background );
+			@include css( font-family, menu, main, top, font-family );
+			@include css( letter-spacing, menu, main, top, letter-spacing );
+		}
+		
+		> ul, > div.megamenu {
+			top: -3000px;
+			display: block;
+			transform: translateY(-10px);
+			transition: transform .2s;
+			box-shadow: 0 1rem 2.5rem rgba(0,0,0,0.15);
+			
+			&:before {
+				content: '';
+				position: absolute;
+				top: -2rem;
+				left: 4rem;
+				border: 1rem solid transparent;
+				border-bottom-color: #fff;
+			}
+		}
+
+		// Active Anchor
+		&:hover>a,
+		&.show>a,
+		&.active>a {
+			@include css(color, menu, main, top, active-color);
+			@include css(background, menu, main, top, active-background);
+		}
+
+		&:hover {
+			>ul, > div {
+				transform: translateY(0);
+				top: 100%;
+			}
+		}
+
+		@if ( get( menu, main, top, cut-start-end ) ) {
+			&:first-child a {
+				padding-left: 0;
+			}
+
+			&:not(.float-right):last-child,
+			&:not(.float-right) + li.float-right {
+				margin-right: 0;
+			}
+		}
+	}
+
+	&.sf-arrows ul {
+		border-top: none;
+	}
+
+	> li > ul {
+		left: -15px;
+	}
+
+	.megamenu {
+		left: -15px;
+		border-top: none;
+
+		img {
+			height: 100%;
+			object-fit: cover;
+			// object-position: left;
+		}
+
+		a {
+			@include css(color, menu, main, mega, color);
+			@include css(background, menu, main, mega, background);
+		}
+
+		li:hover a {
+			@include css(color, menu, main, mega, active-color);
+			@include css(background, menu, main, mega, active-background);
+		}
+	}
+
+	.nolink {
+		@include css(color, menu, main, nolink, color);
+		@include css(background, menu, main, nolink, background);
+		@include css(font-weight, menu, main, nolink, font-weight);
+	}
+}
+
+// 5. Menu Tip
+
+.tip {
+	display: inline-block;
+	position: relative;
+	margin: -2px 0 0 1rem;
+	padding: 3px 4px;
+	border-radius: 2px;
+	color: #fff;
+	font-family: var(--font-family);
+	font-size: 1rem;
+	line-height: 1;
+	text-transform: uppercase;
+	vertical-align: middle;
+	z-index: 1;
+
+	&:before {
+		position: absolute;
+		top: 50%;
+		right: 100%;
+		left: auto;
+		margin-top: -3px;
+		border: 3px solid transparent;
+		content: '';
+	}
+}
+
+.tip-new {
+	background-color: #0fc567;
+
+	&:not(.tip-top):before {
+		border-right-color: #0fc567;
+	}
+
+	&.tip-top:before {
+		border-top-color: #0fc567;
+	}
+}
+
+.tip-hot {
+	background-color: #eb2771;
+
+	&:not(.tip-top):before {
+		border-right-color: #eb2771;
+	}
+
+	&.tip-top:before {
+		border-right-color: #eb2771;
+	}
+}
+
+.tip-top {
+	position: absolute;
+	top: 0;
+	left: 50%;
+	margin-top: 6px;
+	margin-left: -2px;
+	transform: translate(-50%);
+
+	&:before {
+		top: 100%;
+		right: 60%;
+		margin: 0;
+	}
+}
+
+.megamenu .menu-banner {
+    padding: 0;
+    overflow: hidden;
+    figure { height: 100%; }
+    img {
+        height: 100%;
+        object-fit: cover;
+    }
+    .btn-link:hover {
+        color: var(--primary-color);
+    }
+}
+
+.menu-banner {
+	.banner-content {
+		position: absolute;
+		top: 50%;
+		left: 2rem;
+		transform: translateY(-50%);
+	}
+
+	h4 {
+		font-size: 2.7rem;
+		font-weight: 600;
+		line-height: 1;
+		color: #485156;
+		margin-bottom: 3.5rem;
+		
+		i {
+			position: absolute;
+			top: 33.5%;
+			font-family: Oswald,sans-serif;
+			font-size: 1.8rem;
+			font-style: normal;
+			transform: translateY(-50%) rotate(-90deg);
+		}
+	}
+
+	b {
+		font-size: 3.2rem;
+		color: #f4762a;
+		font-family: Oswald,sans-serif;
+	}
+}
+
+.cart-opened {
+	.cart-overlay {
+		position: fixed;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		background: rgba(0,0,0,.4);
+		z-index: 1050;
+	}
+
+	.cart-dropdown .mobile-cart {
+		transform: none;
+	}
+	
+	.dropdown-box {
+		right: 0;
+	}
+}
+
+.cart-dropdown .mobile-cart {
+    display: block;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: auto;
+    width: 300px;
+    margin: 0;
+    transform: translate(340px);
+    transition: transform .2s ease-in-out 0s;
+    background-color: #fff;
+    z-index: 9999;
+    border: 1px solid #f0f0f0;
+    border-radius: 0;
+    box-shadow: 0 5px 8px rgb(0 0 0 / 15%);
+}

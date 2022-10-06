@@ -1,0 +1,605 @@
+/*
+Name: 			Theme Base
+Written by: 	Okler Themes - (http://www.okler.net)
+Theme Version: 	@@version
+*/
+
+html,
+body {
+	background: $body-color;
+	width: 100%;
+}
+
+html {
+	overflow-x: hidden !important;
+	font-size: 16px;
+}
+
+body {
+	color: #777;
+	font-family: $font-primary;
+	line-height: 22px;
+	margin: 0;
+	font-size: 81.25%;
+}
+
+::selection {
+	background-color: #3390ff;
+	color: #fff;
+}
+
+a {
+	color: $color-primary;
+}
+
+a:hover, a:focus, a.active {
+	color: lighten($color-primary, 5% );
+}
+
+a:active {
+	color: darken($color-primary, 5% );
+}
+
+// Base Responsive
+@media only screen and (max-width: 767px) {
+	html {
+		font-size: 13px;
+	}
+}
+
+// LAYOUT STYLE - SCROLL
+// -----------------------------------------------------------------------------
+
+/* Layout Base - Main Wrapper  */
+.body {
+	min-height: 100vh;
+	width: 100%;
+}
+
+// HEADER
+// -----------------------------------------------------------------------------
+
+/* Layout Base - Header */
+.header {
+	height: 60px;
+	left: 0;
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+
+// INNER WRAPPER
+// -----------------------------------------------------------------------------
+
+/* Layout Base - Inner Wrapper */
+.inner-wrapper {
+	display: table;
+	min-height: 100vh;
+	padding-top: 60px;
+	table-layout: fixed;
+	overflow: hidden;
+	width: 100%;
+}
+
+// MAIN CONTENT
+// -----------------------------------------------------------------------------
+
+/* Layout Base - Content Body */
+.content-body {
+	display: table-cell;
+	padding: 40px;
+	position: relative;
+	vertical-align: top;
+
+	&:not(.card-margin) {
+		> .row + .row {
+			padding-top: 40px;
+			@media(max-width: 767px) {
+				padding-top: 15px;
+			}
+		}
+	}
+
+	&.content-body-modern:not(.card-margin) {
+		> .row + .row,
+		> form > .row + .row,
+		> .row > [class*="col"] > .row + .row {
+			padding-top: 31px;
+			@media(max-width: 767px) {
+				padding-top: 31px;
+			}
+		}
+	}
+
+	&.card-margin {
+		padding-top: 0;
+		.page-header {
+			margin-bottom: 5px;
+		}
+		.card {
+			margin-top: 40px;
+			@media(max-width: 767px) {
+				margin-top: 15px;
+			}
+		}
+	}
+}
+
+// PAGE HEADER
+// -----------------------------------------------------------------------------
+
+/* Layout Base - Page Header */
+.page-header {
+	background: #171717;
+	border-bottom: none;
+	border-left: 1px solid #3A3A3A;
+	box-shadow: 1px (4px - 1) 0 1px #CCCCCC;
+	height: 50px;
+	margin: (-40px) (-40px) 40px (-40px);
+	padding: 0;
+}
+
+// SIDEBAR LEFT
+// -----------------------------------------------------------------------------
+
+/* Layout Base - Sidebar Left */
+.sidebar-left {
+	color: $color-default-inverse;
+	display: table-cell;
+	position: relative;
+	vertical-align: top;
+	width: 300px;
+	z-index: 1010;
+}
+
+/* Layout Base - Sidebar Left Opened ( Larger than mobile ) */
+@media only screen and (min-width: 768px) {
+	html.sidebar-left-collapsed {
+		.sidebar-left {
+			width: 73px;
+		}
+	}
+}
+
+// FLEXBOX SUPPORTED
+// -----------------------------------------------------------------------------
+
+/* Layout Base - Flexbox supported */
+@media only screen and (min-width: 768px) {
+	html.flexbox,
+	html.flexboxlegacy {
+		.inner-wrapper {
+			display: flex;
+		}
+
+		.sidebar-left,
+		.content-body {
+			display: block;
+			flex-shrink: 0;
+		}
+
+		.content-body {
+			flex: 2;
+			min-width: 1px;
+		}
+
+		/* Tab Navigation */
+		&.has-tab-navigation {
+			.inner-wrapper {
+				flex-direction: column;
+			}
+		}
+	}
+}
+
+// LAYOUT STYLE - FIXED
+// -----------------------------------------------------------------------------
+
+/* Layout Fixed */
+@media only screen and (min-width: 768px) {
+
+	/* Layout Fixed - Reseting Styles */
+	html.fixed {
+		.inner-wrapper,
+		.sidebar-left,
+		.content-body {
+			display: block;
+		}
+	}
+
+	/* Layout Fixed - Header */
+	html.fixed {
+		.header {
+			position: fixed;
+			z-index: 1020;
+		}
+	}
+
+	/* Layout Fixed - Inner Wrapper */
+	html.fixed {
+		.inner-wrapper {
+			padding-top: 60px + 50px;
+		}
+	}
+
+	/* Layout Fixed - Content Body */
+	html.fixed {
+		.content-body {
+			margin-left: 300px;
+
+			&.has-toolbar {
+				padding-top: 40px + 52px;
+			}
+		}
+
+		&.has-top-menu:not(.has-left-sidebar-half) {
+			.content-body {
+				margin-left: 0;
+			}
+		}
+	}
+
+	/* Layout Fixed - Page header */
+	html.fixed {
+		.page-header {
+			left: 300px;
+			margin: 0;
+			position: fixed;
+			right: 0;
+			top: 60px;
+		}
+
+		&.has-top-menu:not(.has-left-sidebar-half) {
+			.page-header {
+				left: 0;
+			}
+		}
+	}
+
+	/* Layout Fixed - Sidebar Left */
+	html.fixed {
+		.sidebar-left {
+			bottom: 0;
+			left: 0;
+			padding-bottom: 50px;
+			position: fixed;
+			top: 60px;
+
+			.nano-content {
+				padding-bottom: 50px;
+			}
+		}
+	}
+
+	/* Layout Fixed - Sidebar Left Collapsed */
+	html.fixed.sidebar-left-collapsed {
+		.page-header {
+			left: 73px;
+		}
+
+		.content-body {
+			margin-left: 73px;
+		}
+	}
+}
+
+// LAYOUT MOBILE
+// -----------------------------------------------------------------------------
+
+@media only screen and (max-width: 767px) {
+	html,
+	body {
+		background: $body-color;
+	}
+
+	html.mobile-device {
+		.sidebar-left,
+		.sidebar-right {
+			overflow-y: scroll;
+			overflow-x: hidden;
+			-webkit-overflow-scrolling: touch;
+		}
+	}
+
+	body {
+		min-height: 100vh;
+	}
+
+	.inner-wrapper,
+	.sidebar-left,
+	.content-body {
+		display: block;
+	}
+
+	.body {
+		min-height: 0;
+		overflow: visible;
+	}
+
+	.header {
+		background: none;
+		border: none;
+		height: auto;
+		position: static;
+
+		.logo-container {
+			height: 60px;
+			left: 0;
+			position: fixed;
+			right: 0;
+			top: 0;
+			z-index: 99;
+		}
+
+		.header-right {
+			background: #FFF;
+			float: none !important;
+			height: 60px;
+			margin-top: 60px;
+			width: 100%;
+		}
+	}
+
+	.inner-wrapper {
+		min-height: 0;
+		padding-top: 0;
+	}
+
+	.content-body {
+		padding: 0 15px 15px;
+	}
+
+	.page-header {
+		margin: 0 -15px 20px;
+	}
+
+	.sidebar-left {
+		bottom: 0;
+		left: -100%;
+		min-height: 0;
+		min-width: 100%;
+		min-width: 100vw;
+		padding-top: 60px;
+		padding-bottom: 50px;
+		position: fixed;
+		overflow: hidden;
+		top: 0;
+		z-index: 98 !important;
+	}
+
+	.sidebar-right {
+		bottom: 0;
+		left: auto;
+		right: -100%;
+		min-height: 0;
+		margin-right: 0;
+		min-width: 100%;
+		min-width: 100vw;
+		top: 0;
+		z-index: 100;
+	}
+
+	html.csstransforms {
+		.sidebar-left,
+		.sidebar-right {
+			transition-property: margin;
+			transition-duration: .25s;
+			transition-timing-function: ease-out;
+			transition-delay: 0;
+		}
+		.sidebar-left {
+			margin-left: -25px;
+		}
+
+		.sidebar-right {
+			margin-right: -25px;
+		}
+	}
+
+	/* If desktop is seeing mobile res, fix scrollbars */
+	html.no-mobile-device {
+		body {
+			min-height: 0;
+		}
+
+		.body {
+			min-height: 100vh;
+			overflow: hidden;
+		}
+
+		.inner-wrapper {
+			overflow-y: auto;
+		}
+
+		&.sidebar-left-opened,
+		&.sidebar-right-opened {
+			&,
+			& body {
+				overflow: hidden;
+			}
+		}
+	}
+
+	/* Layout Mobile - Sidebar Left Opened */
+	html.sidebar-left-opened {
+		&.no-csstransforms {
+			.sidebar-left {
+				left: 0;
+			}
+		}
+
+		&.csstransforms {
+			.sidebar-left {
+				margin-left: 100%;
+			}
+		}
+	}
+
+	/* Layout Mobile - Sidebar Right Opened */
+	html.sidebar-right-opened {
+		&.no-csstransforms {
+			.sidebar-right {
+				right: 0;
+			}
+		}
+
+		&.csstransforms {
+			.sidebar-right {
+				margin-right: 100%;
+			}
+		}
+	}
+
+	/* Layout Mobile - Sidebar Left Collapsed & Sidebar Right Opened */
+	html.sidebar-left-collapsed.sidebar-right-opened {
+		.sidebar-left {
+			margin-left: -300px;
+		}
+	}
+}
+
+// INNER LAYOUT - WITH MENU
+// -----------------------------------------------------------------------------
+
+// CONTENT WITH MENU
+// -----------------------------------------------------------------------------
+
+/* Content With Menu - Responsive */
+@media only screen and (max-width: 767px) {
+
+	.inner-body {
+		padding: 40px 15px 0;
+	}
+}
+
+/* Content With Menu - Menu and Body */
+@media only screen and (min-width: 768px) {
+
+	.inner-body {
+		display: table-cell;
+		vertical-align: top;
+		padding: 40px;
+	}
+
+	.inner-toolbar {
+		height: 52px;
+		overflow: hidden;
+	}
+
+	.content-with-menu-has-toolbar {
+		.inner-menu-toggle {
+			border-radius: 0;
+		}
+		.inner-toolbar {
+			padding-left: 140px;
+		}
+	}
+}
+
+// FLEXBOX SUPPORTED
+// -----------------------------------------------------------------------------
+
+/* Content With Menu - Flexbox supported */
+@media only screen and (min-width: 768px) {
+	html.flexbox,
+	html.flexboxlegacy {
+		.content-with-menu-container {
+			display: flex;
+		}
+
+		.inner-menu,
+		.inner-body {
+			display: block;
+			flex-shrink: 0;
+		}
+
+		.inner-body {
+			flex: 2;
+		}
+	}
+}
+
+/* Content With Menu + Layout Fixed */
+@media only screen and (min-width: 768px) {
+	html.fixed {
+		.content-with-menu-container,
+		.inner-menu,
+		.inner-body {
+			display: block;
+		}
+
+		.content-with-menu-container {
+			position: relative;
+		}
+
+		.inner-menu-toggle {
+			position: absolute;
+			top: 60px + 50px + 4;
+			border-radius: 0 0 $border-radius 0;
+			width: 140px;
+			z-index: 1002;
+		}
+
+		.inner-menu {
+			bottom: 0;
+			display: block;
+			left: 300px;
+			position: fixed;
+			margin: 0;
+			top: 60px + 50px + 4;
+			width: 300px;
+			padding: 35px;
+			z-index: 1002;
+		}
+
+		.inner-menu-content {
+			display: block;
+		}
+
+		.inner-body {
+			margin-left: 300px;
+			border-top: (60px + 50px + 3) solid transparent;
+			margin-top: -77px;
+			min-height: 100vh;
+			position: relative;
+		}
+
+		.content-with-menu-has-toolbar .inner-body {
+			border-top-width: (60px + 50px + 52px + 3);
+		}
+	}
+}
+
+/* Content With Menu + Layout Fixed + Sidebar Left Collapsed */
+@media only screen and (min-width: 768px) {
+	html.fixed.sidebar-left-collapsed {
+		.inner-menu,
+		.inner-menu-toggle,
+		.inner-toolbar {
+			left: 73px;
+		}
+
+		&.inner-menu-opened {
+			.inner-menu-toggle,
+			.inner-toolbar {
+				left: 73px + 300px;
+			}
+		}
+	}
+}
+
+/* Resolution gt 767 and lt 1366 - Hide Inner Menu */
+@media only screen and (min-width: 768px) and (max-width: 1365px) {
+	html.fixed,
+	html.scroll,
+	html.boxed {
+		.inner-body {
+			margin-left: 0;
+		}
+	}
+}
+
+/* Fix IE Scrollbar Overlaying content */
+@-ms-viewport {
+	width: auto !important;
+}

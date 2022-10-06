@@ -1,0 +1,15 @@
+// Error Boxes
+.error-box {
+    padding: 10px 15px;
+    list-style: disc inside;
+    text-align: left;
+    border: 1px solid;
+    margin-bottom: 10px;
+    background: #f6d6d5;
+    border-color: #f2c6c4;
+    color: #6d1a17;
+
+    li {
+        padding: .5rem 0;
+    }
+}

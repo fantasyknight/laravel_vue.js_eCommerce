@@ -1,0 +1,164 @@
+// Footer Two
+
+.footer.footer-two {
+    line-height: 1.4;
+    letter-spacing: .005em;
+
+    .top-border:before {
+        content: '';
+        display: block;
+        flex: 0 0 100%;
+        border-top: 1px solid #e7e7e7;
+    }
+
+    // 1. Footer Top
+
+    .footer-top {
+        .container {
+            &:after {
+                content: '';
+                display: block;
+                flex: 0 0 100%;
+                border-top: 1px solid #e7e7e7;
+                margin-top: 4rem;
+            }
+
+            &:not(.top-border),
+            &.top-border:before {
+                padding-top: 4rem;
+            }
+        }
+
+        form {
+            margin: 0;
+        }
+
+        button {
+            padding: .7em 1.244em;
+
+            &:hover {
+                opacity: .8;
+            }
+        }
+
+        .form-control {
+            width: 100%;
+            height: auto;
+            margin: 0;
+            border: none;
+            padding: 1.25em 1em;
+            color: var(--body-text);
+            background-color: #f4f4f4;
+            font-family: var(--font-family);
+            font-size: 1.2rem;
+
+            &::placeholder {
+                color: #999;
+            }
+
+            &:focus,
+            &:active {
+                background-color: #f4f4f4;
+            }
+        }
+    }
+
+    .widget-newsletter-info {
+        margin-right: 4.8rem;
+    }
+
+    .widget-newsletter-title {
+        letter-spacing: .075em;
+        font-size: 1.6rem;
+    }
+
+    p.widget-newsletter-content {
+        font-family: var(--font-family);
+        line-height: 20px;
+    }
+
+    // 2. Footer Middle
+
+    .footer-middle {
+        padding-top: 6.4rem;
+        padding-bottom: 4.1rem;
+
+        .logo {
+            margin-bottom: 4rem;
+            margin-right: 0;
+        }
+
+        .links {
+            line-height: 2.4rem;
+        }
+    }
+
+    .widget-title {
+        color: #000;
+        line-height: 1.4;
+        margin: 0 0 1.5rem;
+    }
+
+    .widget-account {
+        padding: 0 7rem;
+    }
+
+    .contact-widget {
+        margin: 0 0 1rem;
+
+        .widget-title {
+            font-weight: 400;
+            font-size: 1.3rem;
+            font-family: var(--font-family);
+            letter-spacing: .005em;
+            color: #000;
+            margin-bottom: 0;
+        }
+
+        a {
+            display: block;
+            margin-top: 2px;
+        }
+    }
+
+    // 3. Footer Bottom
+    .footer-bottom {
+        padding-bottom: 3.2rem;
+
+        .container {
+            &:not(.top-border),
+            &.top-border:before {
+                padding-top: 2.4rem;
+            }
+        }
+    }
+
+    // Responsive
+
+    @include mq(lg, max) {
+        .widget-newsletter {
+            margin-bottom: 2rem;
+        }
+
+        .widget {
+            margin-bottom: 3rem;
+        }
+    }
+
+    @include mq(md, max) {
+        .widget-newsletter-info {
+            margin-bottom: 1.5rem;
+        }
+
+        .widget-newsletter .form-control {
+            max-width: 70%;
+        }
+
+        .footer-top {
+            .form-control,
+            button {
+                height: 40px;
+            }
+        }
+    }
+}

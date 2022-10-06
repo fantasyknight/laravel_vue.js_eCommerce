@@ -1,0 +1,302 @@
+f/* Tables - Basic */
+.table {
+	width: 100%;
+
+	.table {
+		background: transparent;
+	}
+}
+
+/* Tables - Responsive */
+.table-responsive {
+	> .table-bordered {
+		border: 1px solid #dee2e6;
+	}
+}
+
+/* Bootstrap uses important, we need to force it here */
+.table.mb-0 {
+	margin-bottom: 0 !important;
+}
+
+/* In case you dont want a border in some row */
+.table .b-top-0 td {
+	border-top: none;
+}
+
+// ACTIONS
+// -----------------------------------------------------------------------------
+/* Tables - Actions */
+.table {
+	.actions,
+	.actions-hover {
+		vertical-align: middle;
+
+		a {
+			display: inline-block;
+			margin-right: 5px;
+			color: #666;
+
+			&:last-child {
+				margin-right: 0;
+			}
+		}
+
+		a:hover {
+			color: #333;
+		}
+	}
+
+	.actions-hover {
+		a {
+			opacity: 0;
+		}
+	}
+
+	tr:hover {
+		.actions-hover {
+			a {
+				opacity: 1;
+			}
+		}
+	}
+
+	.actions-fade {
+		a {
+			transition: all .2s linear;
+		}
+	}
+}
+
+// NO MORE TABLES
+// -----------------------------------------------------------------------------
+/* Tables - No More Tables technique (991px is the bootstrap SM max-width) */
+@media only screen and (max-width: 991px) {
+	.table.table-no-more {
+		&,
+		thead,
+		tbody,
+		tr,
+		th,
+		td {
+			display: block;
+		}
+
+		thead tr {
+			left: -9999px;
+			position: absolute;
+			top: -9999px;
+		}
+
+		tr {
+			border-bottom: 1px solid #DDD;
+		}
+
+		td {
+			border: none;
+
+			position: relative;
+			padding-left: 50%;
+			text-align: left;
+			white-space: normal;
+
+			&:before {
+				content: attr(data-title);
+				font-weight: bold;
+				left: 6px;
+				padding-right: 10px;
+				position: absolute;
+				text-align:left;
+				top: 8px;
+				white-space: nowrap;
+				width: 45%;
+			}
+		}
+
+		&.table-bordered {
+			td {
+				border-bottom: 1px solid #dedede;
+			}
+		}
+
+		&.table-sm {
+			td {
+				&:before {
+					top: 5px;
+				}
+			}
+		}
+	}
+}
+
+// ECOMMERCE
+// -----------------------------------------------------------------------------
+.table {
+	&.table-ecommerce-simple {
+		display: table;
+		
+		@media only screen and (min-width: 992px) {
+			min-width: 640px;
+		}
+
+		thead {
+			th {
+				border-bottom-width: 1px;
+				border-top: 0;
+			}
+		}
+		tbody {
+			td {
+				vertical-align: middle;
+			}
+
+			tr {
+				&:first-child {
+					td {
+						border-top: 0;
+					}
+				}
+			}
+		}
+
+		&.table-striped > tbody > tr:nth-child(2n+1) > td,
+		&.table-striped > tbody > tr:nth-child(2n+1) > th {
+			background-color: #f9f9f9;
+		}
+
+		&.table-striped {
+			tbody tr:nth-of-type(odd) {
+				background-color: #f9f9f9;
+			}
+			th, td {
+				border-top: 0;
+			}
+		}
+
+		&.table-ecomerce-simple-border-bottom {
+			border-bottom: 1px solid #dee2e6;
+		}
+	}
+}
+
+// STATES
+// -----------------------------------------------------------------------------
+/* Tables - States */
+@each $state in $states {
+
+	.table > thead > tr > td.#{nth($state,1)},
+	.table > tbody > tr > td.#{nth($state,1)},
+	.table > tfoot > tr > td.#{nth($state,1)},
+	.table > thead > tr > th.#{nth($state,1)},
+	.table > tbody > tr > th.#{nth($state,1)},
+	.table > tfoot > tr > th.#{nth($state,1)},
+	.table > thead > tr.#{nth($state,1)} > td,
+	.table > tbody > tr.#{nth($state,1)} > td,
+	.table > tfoot > tr.#{nth($state,1)} > td,
+	.table > thead > tr.#{nth($state,1)} > th,
+	.table > tbody > tr.#{nth($state,1)} > th,
+	.table > tfoot > tr.#{nth($state,1)} > th {
+		color: #FFF;
+		background-color: nth($state,2) !important;
+	}
+}
+
+.table > thead > tr > td.dark,
+.table > tbody > tr > td.dark,
+.table > tfoot > tr > td.dark,
+.table > thead > tr > th.dark,
+.table > tbody > tr > th.dark,
+.table > tfoot > tr > th.dark,
+.table > thead > tr.dark > td,
+.table > tbody > tr.dark > td,
+.table > tfoot > tr.dark > td,
+.table > thead > tr.dark > th,
+.table > tbody > tr.dark > th,
+.table > tfoot > tr.dark > th {
+	background-color: lighten($color-dark, 20%);
+	color: $color-dark-inverse;
+}
+
+// Table Responsive
+.table tbody tr {
+	td:nth-child(2) {
+		position: relative;
+
+		.slide-content {
+			position: absolute;
+			top: calc(50% - 10px);
+			right: 15px;
+
+			&:before {
+				font-family: "Font Awesome 5 Free";
+				font-weight: 900;
+				content: '\f107';
+			}
+
+			&:hover, &:focus, &:active {
+				text-decoration: none;
+			}
+		}
+	}
+
+	&.row-expanded td:nth-child(2) .slide-content:before {
+		content: '\f106';
+	}
+}
+
+@media only screen and (max-width: 991px) {
+	.table:not(.table-no-collapse) {
+		min-width: 1px !important;
+
+		thead tr th {
+			&:nth-child(2) {
+				width: auto;
+				max-width: 100%;
+				
+				&:after, &:before {
+					display: none;
+				}
+			}
+	
+			&:nth-child(n + 3) {
+				display: none;
+			}
+		}
+
+		tbody tr {
+			td {
+				&:nth-child(2) {
+					display: block;
+				}
+	
+				&:nth-child(n + 3) {
+					position: relative;
+					display: none;
+					min-height: 41px;
+					padding-left: calc(0.75rem + 30%);
+	
+					&:before {
+						position: absolute;
+						content: attr(data-column);
+						left: .75rem;
+					}
+				}
+			}
+	
+			&.row-expanded {
+				td:nth-child(n + 3) {
+					display: block;
+				}
+			}
+	
+			&:first-child td:nth-child(2) {
+				border-top: none;
+			}
+		}
+	}
+}
+
+/* Reply Row */
+.table > tbody > tr.replyRow > td {
+	border: 1px solid #dee2e6 !important;
+}

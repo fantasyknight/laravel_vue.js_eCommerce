@@ -1,0 +1,40 @@
+.store-single .store-with-banner {
+    figure {
+        margin: 0;
+
+        img {
+            width: 100%;
+        }
+    }
+
+    .store-details {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .seller-avatar {
+        margin-top: -80px;
+        border-radius: 50%;
+        overflow: hidden;
+    }
+
+    .store-data {
+        margin-bottom: 2rem;
+    }
+}
+
+@include mq(xl, max) {
+    .store-single.store-with-banner {
+        .store-title {
+            margin-bottom: 1rem;
+            font-size: 2rem;   
+        }
+
+        .store-info-list li {
+            padding-bottom: 1rem;
+            line-height: 24px;
+        }
+    }
+}

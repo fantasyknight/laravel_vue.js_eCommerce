@@ -1,0 +1,126 @@
+// 1. Header Base
+.header.header-one {
+	border-bottom: 1px solid #f4f4f4;
+
+	.header-top {
+		border-bottom: 1px solid #e7e7e7;
+		padding:  8px 0;
+		font-size: 1.1rem;
+		font-weight: 600;
+		letter-spacing: .025em;
+		line-height: 24px;
+	
+		a {
+			color: inherit;
+		}
+
+		.social-icon:hover,
+		.social-icon:focus,
+		.social-icon:active {
+			color: #fff;
+		}
+	}
+	
+	.header-middle {
+		padding: 2.7rem 0;
+	}
+	
+	.header-bottom {
+		.container:before {
+			content: '';
+			display: block;
+			position: absolute;
+			top: 0;
+			left: 10px;
+			right: 10px;
+			border-top: 1px solid #f4f4f4;
+			flex: 0 0 100%;
+			-ms-flex: 0 0 100%;
+		}
+	}
+
+	.header-search {
+		margin-right: 1.9rem;
+	}
+
+	.mobile-menu-toggler {
+		color: var(--primary-color);
+	}
+
+	.wish-link, .login-link {
+		z-index: 1;
+		margin-bottom: 3px;
+	}
+}
+
+// 2. Header Elements
+
+// 2.1) Header Dropdown
+.header-one .header-dropdown {
+	.dropdown-toggle:after {
+		font-size: 17px;
+	}
+
+	.badge-circle {
+		left: 21px;
+	}
+}
+
+// 2.7) Main Nav
+.header-one .main-nav .menu {
+	> li {
+		> a {
+			border-top: 3px solid transparent;
+		}
+
+		&.active > a,
+		> a:hover {
+			border-top-color: var(--primary-color);
+		}
+
+		&.float-right a:hover {
+			border-top-color: transparent !important;
+		}
+	}
+
+	.tip-top {
+		padding: 2px;
+		border-radius: 0;
+		left: 85%;
+		margin-top: 5px;
+		font-size: 9px;
+		transform: none;
+	}
+}
+
+// 3. Responsive
+.header-one {
+	@include mq(lg) {
+		.header-middle.sticky-header.fixed {
+			position: static;
+		}
+	}
+
+	@media (min-width: 992px) and (max-width: 1199px) {
+		.dropdown-expanded li:not(:first-child) {
+			margin-left: 1.3rem;
+		}
+	}
+
+	@include mq(lg, max) {
+		.header-middle.sticky-header.fixed {
+			padding: 8px 0;
+		}
+	}
+
+	@include mq(sm, max) {
+		.header-icon,
+		.cart-dropdown {
+			padding: 0;
+		}
+
+		.header-search {
+			display: none;
+		}
+	}
+}

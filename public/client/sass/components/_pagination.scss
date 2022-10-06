@@ -1,0 +1,294 @@
+// Pagination
+
+// # Contents
+
+// 1. Toolbox
+// 1.1) Toolbox Base
+// 1.2) Toolbox Item Base
+// 2. Elements
+// 2.1) Pagination
+// 2.2) Layout Button
+// 3. Responsive
+
+// # Settings
+
+// # Variables
+
+$p-pagination-color: #706f6c !default;
+$p-pagination-font-size: 1.4rem !default;
+$p-pagination-font-weight: 600 !default;
+
+// 1. Toolbox
+
+// 1.1) Toolbox Base
+.toolbox {
+	flex-wrap: wrap;
+	-ms-flex-wrap: wrap;
+	justify-content: space-between;
+	-ms-flex-pack: justify;
+	margin-bottom: 2rem;
+	font-size: 1.2rem;
+	line-height: 1.5;
+
+	.select-custom {
+		&:after {
+			right: 1.5rem;
+			margin-top: -1px;
+			color: var(--primary-color-dark);
+			font-size: 1.6rem;
+		}
+
+		.form-control {
+			max-width: 160px;
+			padding-right: 2.5rem;
+			font-size: 1.3rem;
+		}
+	}
+
+	label {
+		margin: 1px 1.1rem 0 0;
+		color: var(--body-text);
+		font-size: 1.3rem;
+		font-weight: 400;
+		font-family: var(--font-family);
+	}
+
+	.form-control {
+		display: inline-block;
+		margin-bottom: 0;
+		padding: 0 .7rem;
+		color: var(--body-text);
+
+		&:focus {
+			color: var(--body-text);
+		}
+	}
+
+	select.form-control:not([size]):not([multiple]) {
+		height: 34px;
+	}
+
+	.toolbox-show .select-custom:after {
+		right: 1rem;
+	}
+
+	.toolbox-show:not(:last-child) {
+		margin-right: 1.6rem;
+	}
+}
+
+.toolbox,
+.toolbox-left,
+.toolbox-right,
+.toolbox-item {
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-align: center;
+	align-items: center;
+}
+
+// 1.2) Toolbox Item Base
+.toolbox-item {
+	&:not(:last-child) {
+		margin-right: 10px;
+	}
+
+	&.toolbox-sort {
+		margin-right: 1.5rem;
+	}
+
+	.select-custom {
+		margin-bottom: 0;
+	}
+}
+
+// 1.3) Store Toolbox
+
+.toolbox.toolbox-store {
+	background-color: #fff;
+	padding: 2rem;
+	margin-top: 4px;
+	margin-bottom: 2rem;
+	box-shadow: 1px 1px 20px 0px #e9e9e9;
+  
+	label {
+	  margin-top: -1px;
+	  font-size: 1.4rem;
+	  letter-spacing: .2px;
+	}
+  
+	.toolbox-filter {
+	  margin-left: auto;
+	}
+  
+	.btn {
+	  position: relative;
+	  min-width: unset;
+	  padding: .8rem 2.5rem .8rem 3.5rem;
+	  border: 0;
+	  border-radius: 3px;
+	  font-family: var(--font-family);
+	  font-weight: 400;
+	  letter-spacing: .2px;
+	  line-height: 26px;
+	  text-transform: none;
+  
+	  &:before {
+		content: '';
+		position: absolute;
+		left: 13px;
+		top: 16px;
+		width: 15px;
+		height: 10px;
+		background-repeat: no-repeat;
+		background-image: linear-gradient(#fff 2px, transparent 0), linear-gradient(#fff 2px, transparent 0), linear-gradient(#fff 2px, transparent 0);
+		background-size: 100% 2px, 65% 2px, 25% 2px;
+		background-position: center 0, center 4px, center 8px;
+	  }
+	}
+  
+	.toolbox-sort {
+	  margin-left: 3rem;
+	  label {
+		margin-top: -3px;
+		margin-right: 3px;
+	  }
+	}
+  
+	.select-custom {
+	  select.form-control {
+		width: auto;
+		height: 44px;
+		padding: .8rem 2rem;
+		font-size: 1.4rem;
+		letter-spacing: .015em;
+		line-height: 1;
+	  }
+  
+	  &:after {
+		display: none; 
+	  }
+	}
+  
+	.layout-modes {
+	  margin-left: 1.9rem;
+	}
+  
+	.layout-btn {
+		color: #777;
+		font-size: 1.7rem;
+
+		&:hover,
+		&:focus,
+		&.active {
+		color: #f14705;
+		}
+	}
+  }
+
+// 2. Elements
+
+// 2.1) Pagination
+.toolbox-pagination {
+	border-top: 1px solid #efefef;
+    padding-top: 2.5rem;
+	margin-bottom: 3.5rem;
+}
+
+.pagination {
+	flex-wrap: wrap;
+	-ms-flex-wrap: wrap;
+	color: $p-pagination-color;
+	font-size: $p-pagination-font-size;
+	font-weight: $p-pagination-font-weight;
+	font-family: var(--second-font-family);
+
+}
+.page-item {
+	&:not(:first-child) {
+		margin-left: .5rem;
+	}
+
+	&.disabled {
+		pointer-events: none;
+		
+		.page-link {
+			color: #ccc;
+		}
+	}
+}
+
+.page-link {
+	border: 1px solid #ccc;
+	padding: 0 .5em;
+	min-width: 2.2em;
+	color: inherit;
+	line-height: 2.1em;
+	text-align: center;
+
+	&:hover,
+	&:focus,
+	&.active {
+		color: $p-pagination-color;
+		background-color: transparent;
+		border-color: var(--primary-color);
+		box-shadow: none;
+	}
+
+	i {
+		font-size: 2rem;
+	}
+}
+span.page-link,
+.page-link-btn {
+	i {
+		font-size: 1.4rem;
+	}
+	
+	i::before {
+		font-weight: 600;
+	}
+}
+
+// 2.2) Layout Button
+
+.layout-btn {
+	display: inline-block;
+	width: 1.2em;
+	color: #000;
+	font-size: 1.6rem;
+	line-height: 34px;
+	text-align: center;
+
+	&:not(:last-child) {
+		margin-right: 4px;
+	}
+
+	&.active {
+		color: var(--primary-color);
+	}
+}
+
+// 3. Responsive
+
+@include mq(lg) {
+	.toolbox-pagination {
+		margin-bottom: 2rem;
+	}
+}
+
+@include mq(lg, max) {
+	aside .toolbox-item {
+		display: block;
+
+		&:after {
+			content: normal;
+		}
+	}
+}
+
+@include mq(md, max) {
+	.toolbox label {
+		display: none;
+	}
+}

@@ -1,0 +1,8 @@
+img[lazy=loading] {
+    height: 0 !important;
+    background-color: #f4f4f4;
+}
+
+img[lazy=loaded] {
+    background-color: #f4f4f4;
+}

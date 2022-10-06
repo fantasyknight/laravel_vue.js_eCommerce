@@ -1,0 +1,134 @@
+/* Toolbar */
+.inner-toolbar {
+	background: #1D2127;
+	margin: -40px -40px 30px;
+	padding: 0;
+	border: 1px solid transparent;
+	border-left: 1px solid #121418;
+
+	& > ul {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+
+		& > li {
+			display: inline-block;
+			padding: 15px;
+			font-size: 13px;
+			border-right: 1px solid #121418;
+
+			& > a {
+				display: inline-block;
+				padding: 0;
+				color: #abb4be;
+
+				&:hover, &:focus, &.active {
+					color: #fff;
+					text-decoration: none;
+				}
+			}
+
+			&.right {
+				float: right;
+				padding: 10px;
+				
+				.form-control-sm {
+					line-height: 2;
+				}
+			}
+
+			i.fa, .fab, .fal, .far, .fas {
+				font-size: 14px;
+			}
+
+			> .btn {
+				margin-top: -9px;
+			}
+		}
+	}
+
+	.nav-pills {
+		margin-top: -8px;
+
+		> li {
+			margin-right: 1px;
+		}
+
+		> li > label {
+			margin-bottom: 0;
+			margin-right: 12px;
+			margin-top: 8px;
+		}
+
+		a {
+			color: #abb4be;
+			padding-top: 8px;
+			padding-bottom: 8px;
+		}
+
+		a:hover {
+			background: $color-dark;
+			color: #FFF;
+		}
+
+		.active {
+			a {
+				color: #FFF;
+			}
+		}
+	}
+}
+
+/* Toolbar - Responsive */
+@media only screen and (max-width: 767px) {
+	.inner-toolbar {
+		clear: both;
+		margin: -40px -15px 30px;
+		padding: 0 15px;
+
+		ul {
+			& > li {
+				border-right: 0;
+				padding-left: 0;
+			}
+
+			& > li:first-child {
+				padding-left: 0;
+			}
+
+			& > li.right {
+				padding-left: 0;
+				padding-right: 0;
+			}
+		}
+	}
+}
+
+@media only screen and (max-width: 480px) {
+	.inner-toolbar {
+		.nav-pills a {
+			padding-left: 10px;
+			padding-right: 10px;
+		}
+		ul > li.right {
+			clear: both;
+			float: none;
+			vertical-align: top;
+		}
+	}
+}
+
+/* Toolbar + Layout Fixed */
+@media only screen and (min-width: 768px) {
+	html.fixed {
+		.inner-toolbar {
+			left: 250px;
+			right: 0;
+			margin: 0;
+			padding: 0 38px;
+			position: fixed;
+			top: 147px;
+			z-index: 1001;
+		}
+	}
+}

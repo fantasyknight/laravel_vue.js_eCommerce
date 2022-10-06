@@ -1,0 +1,50 @@
+/*! nouislider - 9.2.0 - 2017-01-11 10:35:35 */
+/* Functional styling;
+ * These styles are required for noUiSlider to function.
+ * You don't need to change these rules to apply your design.
+ */
+ .noUi-base {
+   cursor: pointer;
+ }
+ 
+ div.noUi-horizontal {
+   height: .3rem;
+   background: #eee;
+   border-radius: 0;
+    box-shadow: none;
+    border: 0;
+ }
+ div.noUi-horizontal .noUi-handle {
+   width: 1.1rem;
+   height: 1.1rem;
+   top: -.3em;
+   background: #08C;
+   border-radius: 50%;
+   border: none;
+   box-shadow: none;
+   cursor: pointer;
+
+   &:before, &:after {
+     display: none;
+   }
+
+  &.noUi-handle-lower {
+    left: 0;
+  }
+  
+  &.noUi-handle-upper {
+	  left: unset;
+	  right: 1.1rem;
+  }
+ }
+ 
+ /* Styling;
+  */
+ div.noUi-connect {
+   background: none;
+   box-shadow: 0 1px 2px 0 rgba(0,0,0,0.38) inset;
+   -webkit-transition: background 450ms;
+   transition: background 450ms;
+ }
+ 
+ 

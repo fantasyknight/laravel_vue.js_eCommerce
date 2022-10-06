@@ -1,0 +1,157 @@
+/* Menu */
+ul.nav-main {
+	margin-right: 5px;
+
+	a {
+		text-decoration: none;
+	}
+
+	// PRIMARY MENU ITEM
+	// -----------------------------------------------------------------------------
+
+	& > li {
+
+		& > a {
+			padding: $menu-item-padding;
+
+			// PRIMARY HOVER
+			// -----------------------------------------------------------------------------
+			&:hover,
+			&:focus {
+				background-color: #21262d;
+			}
+		}
+
+		// PRIMARY ITEM: EXPANDED
+		// -----------------------------------------------------------------------------
+		&.nav-expanded {
+			& > a {
+				background: #21262d;
+			}
+		}
+	}
+
+	// PRIMARY AND CHILDREN ITEMS
+	// -----------------------------------------------------------------------------
+	li {
+		width: 100%;
+		a {
+			display: block;
+			color: #abb4be;
+			white-space: nowrap;
+			text-overflow: ellipsis;
+			font-size: 0.8rem;
+
+			span.badge {
+				font-weight: normal;
+				padding: .3em .7em .4em;
+				margin: .4em -1em 0 0;
+			}
+
+			.not-included {
+				font-style: normal;
+				color: darken(#abb4be, 35%);
+				display: inline-block;
+				padding: 0 0 0 6px;
+			}
+		}
+
+		span {
+			vertical-align: middle;
+		}
+
+		i {
+			font-size: 1.15rem;
+			width: 1.1em;
+			margin-right: 0.5em;
+			text-align: center;
+			vertical-align: middle;
+		}
+
+		// SUB MENU - HAS CHILDREN
+		// -----------------------------------------------------------------------------
+		&.nav-parent {
+			position: relative;
+
+			& > a {
+				cursor: pointer;
+
+				&:after {
+					font-family: 'Font Awesome 5 Free';
+   					font-weight: 900;
+					content: '\f107';
+					color: #abb4be;
+					position: absolute;
+					right: 0;
+					top: 0;
+					padding: $menu-item-arrow-padding;
+				}
+			}
+
+			// SUB MENU - HAS CHILDREN - EXPANDED
+			// -----------------------------------------------------------------------------
+			&.nav-expanded {
+
+				& > a:after {
+					content: '\f106';
+				}
+
+				& > ul.nav-children {
+					display: block;
+
+					> li.active > a {
+						color: #fff;
+					}
+				}
+			}
+
+		}
+
+		// SUB MENU - CHILDREN
+		// -----------------------------------------------------------------------------
+		.nav-children {
+			background: darken(#1D2127, 2%);
+			box-shadow: 0px -3px 3px -3px rgba(0, 0, 0, 0.7) inset;
+			display: none;
+			padding: 10px 0;
+
+			li {
+				a {
+					padding: $menu-children-padding;
+					overflow: hidden;
+
+					&:hover, &:focus {
+						background: darken(#1D2127, 2%);
+					}
+
+					&:after {
+						padding: $menu-item-children-arrow-padding;
+					}
+				}
+			}
+
+			// LEVEL 1
+			.nav-children {
+				box-shadow: none;
+				padding: 0;
+
+				li {
+					a {
+						padding: $menu-children-level1-padding;
+					}
+				}
+
+				// LEVEL 2
+				.nav-children {
+					li {
+						a {
+							padding: $menu-children-level2-padding;
+						}
+					}
+				}
+			}
+		}
+
+	}
+
+}

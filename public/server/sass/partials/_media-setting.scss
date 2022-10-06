@@ -1,0 +1,13 @@
+.media-settings {
+    .form-group + .form-group {
+        border: none;
+    }
+    
+    .form-title {
+        margin-bottom: 20px;
+        border-bottom: 1px solid #ebebeb;
+        padding-bottom: 1rem;
+        color: #333;
+        font-size: 1.1rem;
+    }
+}

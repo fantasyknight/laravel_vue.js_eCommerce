@@ -1,0 +1,693 @@
+.skeleton-body {
+    .skel-widget,
+    .skel-pro,
+    .skel-post,
+    .skel-single-post,
+    .skel-cat,
+    .skel-pro-single .skel-product-gallery,
+    .skel-pro-single .entry-summary1,
+    .skel-pro-single .entry-summary2,
+    .skel-pro-single .entry-summary3 {
+        position: relative;
+        overflow: hidden;
+        width: 100%;
+
+        &:before {
+            content: '';
+            display: block;
+            width: 100%;
+            background-repeat: no-repeat;
+            background-image: linear-gradient(#f4f4f4 100%, transparent 0),linear-gradient(#f4f4f4 100%, transparent 0),linear-gradient(#f4f4f4 100%, transparent 0),linear-gradient(#f4f4f4 100%, transparent 0),linear-gradient(#f4f4f4 100%, transparent 0),linear-gradient(#f4f4f4 100%, transparent 0),linear-gradient(#f4f4f4 100%, transparent 0),linear-gradient(#f4f4f4 100%, transparent 0),linear-gradient(#f4f4f4 100%, transparent 0),linear-gradient(#f4f4f4 100%, transparent 0),linear-gradient(#f4f4f4 100%, transparent 0),linear-gradient(#f4f4f4 100%, transparent 0),linear-gradient(#f4f4f4 100%, transparent 0),linear-gradient(#f4f4f4 100%, transparent 0),linear-gradient(#f4f4f4 100%, transparent 0),linear-gradient(#f4f4f4 100%, transparent 0),linear-gradient(#f4f4f4 100%, transparent 0),linear-gradient(#f4f4f4 100%, transparent 0),linear-gradient(#f4f4f4 100%, transparent 0);
+        }
+
+        &:after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            right: -50%;
+            bottom: -50%;
+            background-image: linear-gradient(90deg, rgba(255,255,255,0) 20%, rgba(255,255,255,0.8) 50%, rgba(255,255,255,0) 80%);
+            animation: skeletonloading 1.5s infinite;
+        }
+    }
+
+    .skel-widget {
+        &:first-of-type {
+            padding-top: 0;
+            margin-top: 0;
+        }
+
+        &:before {
+            height: 315px;
+            background-size: 100% 30px, 70% 20px, 50% 20px, 80% 20px, 40% 20px, 30% 20px, 50% 20px;
+            background-position: left 10px, left 65px, left 105px, left 145px, left 185px, left 225px, left 265px;
+        }
+    }
+    
+    &:not(.loaded) {
+        a, .btn, .form-control {
+            transition: none;
+        }
+
+        .owl-stage {
+            transition: none !important;
+        }
+
+        .skel-hide {
+            height: 0;
+            visibility: hidden;
+            opacity: 0;
+        }
+        
+        .product-default, .post {
+            display: none;
+        }
+    } 
+
+    .skel-pro {
+        z-index: 100;
+        
+        &.skel-padding-20 {
+            &:before {
+                padding-top: 20%;
+            }
+        }
+
+        &.skel-padding-128 {
+            &:before {
+                padding-top: 128%;
+            }
+        }
+
+        &.skel-padding-161 {
+            &:before {
+                padding-top: 161%;
+            }
+        }
+
+        &:before {
+            padding-top: 100%;
+            background-size: 100% 58%, 55% 15px, 85% 20px, 55% 15px, 40% 25px;
+            background-position: left 0,left calc(58% + 25px),left calc(58% + 55px),left calc(58% + 85px),left calc(58% + 120px);
+        }
+    }
+
+    .skel-pro-list {
+        margin-bottom: 1rem;
+        padding-bottom: 1rem;
+
+        &:before {
+            padding-top: 250px;
+            background-image: linear-gradient(#f4f4f4 250px,transparent 0),linear-gradient(#f4f4f4 12px,transparent 0),linear-gradient(#f4f4f4 16px,transparent 0),linear-gradient(#f4f4f4 12px,transparent 0),linear-gradient(#f4f4f4 14px,transparent 0),linear-gradient(#f4f4f4 14px,transparent 0),linear-gradient(#f4f4f4 16px,transparent 0),linear-gradient(#f4f4f4 20px,transparent 0);
+            background-size: 250px 100%,150px 12px,250px 16px,150px 12px,100% 14px,100% 14px,120px 16px,200px 20px;
+            background-position: left 0,270px 20px,270px 44px,270px 70px,270px 105px,270px 130px,270px 170px,270px 205px;
+        }
+    }
+
+    .skel-pro-grid {
+        &::before {
+            content: '';
+            display: block;
+            padding-top: calc(100% + 110px);
+            background-repeat: no-repeat;
+            background-image: linear-gradient(#f4f4f4 100%,transparent 0),linear-gradient(#f4f4f4 12px,transparent 0),linear-gradient(#f4f4f4 16px,transparent 0),linear-gradient(#f4f4f4 12px,transparent 0),linear-gradient(#f4f4f4 16px,transparent 0);
+            background-size: 100% 62%,50% 12px,70% 16px,50% 12px,40% 16px;
+            background-position: left 0,left calc(62% + 20px),left calc(62% + 44px),left calc(62% + 66px),left calc(62% + 92px);
+        }
+        &::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            right: -50%;
+            bottom: -50%;
+            transform: rotate(45deg);
+            background-image: linear-gradient(90deg,rgba(255,255,255,0) 20%,rgba(255,255,255,0.8) 50%,rgba(255,255,255,0) 80%);
+            background-size: 60% 100%;
+            background-position: -100% 0;
+            background-repeat: no-repeat;
+            animation: skeletonloading 1.5s infinite .2s;
+        }
+    }
+
+    .skel-magnifier {
+        &::before {
+            background-image: linear-gradient(#f4f4f4 100%, transparent 0), linear-gradient(#f4f4f4 100%, transparent 0), linear-gradient(#f4f4f4 100%, transparent 0), linear-gradient(#f4f4f4 100%, transparent 0), linear-gradient(#f4f4f4 100%, transparent 0);
+            background-size: 100% calc(80% - 12px), calc(25% - 6px) calc(20% - 4px), calc(25% - 6px) calc(20% - 4px), calc(25% - 6px) calc(20% - 4px), calc(25% - 6px) calc(20% - 4px);
+            background-position: center top,left calc(100% - 9px),33.3333% calc(100% - 9px),66.6666% calc(100% - 9px),right calc(100% - 9px);
+        }
+    }
+
+    .skel-magnifier-extended {
+        &::before {
+            background-image: linear-gradient(#f4f4f4 100%,transparent 0),linear-gradient(#f4f4f4 100%,transparent 0),linear-gradient(#f4f4f4 100%,transparent 0);
+            background-size: 33.2% 100%,33.2% 100%,33.2% 100%;
+            background-position: 0 0,50% 0,100% 0;
+            padding-top: 33.4%;
+        }
+    }
+
+    .skel-magnifier-grid {
+        &::before {
+            background-image: linear-gradient(#f4f4f4 100%,transparent 0),linear-gradient(#f4f4f4 100%,transparent 0),linear-gradient(#f4f4f4 100%,transparent 0),linear-gradient(#f4f4f4 100%,transparent 0);
+            background-size: calc(50% - 10px) calc(50% - 10px);
+            background-position: 0 0,right 0,0 bottom,right bottom;
+        }
+    }
+    
+    .skel-magnifier-both {
+        &::before {
+            background-image: linear-gradient(#f4f4f4 100%,transparent 0),linear-gradient(#f4f4f4 100%,transparent 0),linear-gradient(#f4f4f4 100%,transparent 0),linear-gradient(#f4f4f4 100%,transparent 0),linear-gradient(#f4f4f4 100%,transparent 0);
+            background-size: 100% calc(33.3333% - 3px);
+            background-position: 0 0,0 50%,0 bottom;
+        }
+        &.skel-pro::before {
+            padding-top: 300%;
+        }
+    }
+
+    .skel-both-title {
+        &::before {
+            background-image: linear-gradient(#f4f4f4 51px, transparent 0), linear-gradient(#f4f4f4 51px, transparent 0), linear-gradient(#f4f4f4 51px, transparent 0), linear-gradient(#f4f4f4 41px, transparent 0);
+            background-size: 37% 33px,11% 11px,28% 25px,18% 35px;
+            background-position: left 3px,left 50px,left 92px,100% 0px;
+            padding-top: 6.8%;
+        }
+    }
+
+    .skel-sticky {
+        &::before {
+            background-image: linear-gradient(#f4f4f4 25px,transparent 0),linear-gradient(#f4f4f4 14px,transparent 0),linear-gradient(#f4f4f4 18px,transparent 0),linear-gradient(#f4f4f4 14px,transparent 0),linear-gradient(#f4f4f4 14px,transparent 0),linear-gradient(#f4f4f4 14px,transparent 0),linear-gradient(#f4f4f4 14px,transparent 0),linear-gradient(#f4f4f4 16px,transparent 0),linear-gradient(#f4f4f4 16px,transparent 0),linear-gradient(#f4f4f4 1px,transparent 0),linear-gradient(#f4f4f4 25px,transparent 0),linear-gradient(#f4f4f4 35px,transparent 0),linear-gradient(#f4f4f4 25px,transparent 0);
+            background-size: 55% 25px,70% 14px,40% 18px,100% 14px,100% 14px,100% 14px,100% 14px,40% 16px,40% 16px,100% 1px,70% 25px,60% 35px,60% 25px;
+            background-position: left top,left 34px,left 75px,left 120px,left 147px,left 174px,left 201px,left 240px,left 270px,left 320px,left 350px,left 395px,left 455px;
+        }
+        &::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            right: -50%;
+            bottom: -50%;
+            transform: rotate(45deg);
+            background-image: linear-gradient(90deg,rgba(255,255,255,0) 20%,rgba(255,255,255,0.8) 50%,rgba(255,255,255,0) 80%);
+            background-size: 60% 100%;
+            background-position: -100% 0;
+            background-repeat: no-repeat;
+            animation: skeletonloading 1.5s infinite .2s;
+        }
+    }
+
+    .skel-detail {
+        &::before {
+            background-image: linear-gradient(#f4f4f4 25px,transparent 0),linear-gradient(#f4f4f4 14px,transparent 0),linear-gradient(#f4f4f4 18px,transparent 0),linear-gradient(#f4f4f4 14px,transparent 0),linear-gradient(#f4f4f4 14px,transparent 0),linear-gradient(#f4f4f4 14px,transparent 0),linear-gradient(#f4f4f4 14px,transparent 0),linear-gradient(#f4f4f4 16px,transparent 0),linear-gradient(#f4f4f4 16px,transparent 0),linear-gradient(#f4f4f4 1px,transparent 0),linear-gradient(#f4f4f4 25px,transparent 0),linear-gradient(#f4f4f4 35px,transparent 0),linear-gradient(#f4f4f4 25px,transparent 0);
+            background-size: 55% 25px,70% 14px,40% 18px,100% 14px,100% 14px,100% 14px,100% 14px,40% 16px,40% 16px,100% 1px,70% 25px,60% 35px,60% 25px;
+            background-position: left top,left 34px,left 75px,left 120px,left 147px,left 174px,left 201px,left 240px,left 270px,left 320px,left 350px,left 395px,left 455px;
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            right: -50%;
+            bottom: -50%;
+            transform: rotate(45deg);
+            background-image: linear-gradient(90deg,rgba(255,255,255,0) 20%,rgba(255,255,255,0.8) 50%,rgba(255,255,255,0) 80%);
+            background-size: 60% 100%;
+            background-position: -100% 0;
+            background-repeat: no-repeat;
+            animation: skeletonloading 1.5s infinite .2s;
+        }
+    }
+
+    .skel-extended-detail {
+        &::before {
+            background-image: linear-gradient(#f4f4f4 51px, transparent 0), linear-gradient(#f4f4f4 51px, transparent 0), linear-gradient(#f4f4f4 51px, transparent 0), linear-gradient(#f4f4f4 41px, transparent 0), linear-gradient(#f4f4f4 45px, transparent 0), linear-gradient(#f4f4f4 42px, transparent 0), linear-gradient(#f4f4f4 41px, transparent 0), linear-gradient(#f4f4f4 42px, transparent 0), linear-gradient(#f4f4f4 43px, transparent 0), linear-gradient(#f4f4f4 40px, transparent 0), linear-gradient(#f4f4f4 49px, transparent 0), linear-gradient(#f4f4f4 45px, transparent 0), linear-gradient(#f4f4f4 43px, transparent 0), linear-gradient(#f4f4f4 43px, transparent 0);
+            background-size: 37% 33px,11% 11px,28% 25px,18% 35px,42.5% 40px,100% 1px,100% 11px,100% 11px,100% 11px,100% 1px,14.2% 42px,14% 42px,17% 42px, 17% 42px;
+            background-position: left 3px,left 59px,left 92px,100% 0px,100% 62px,left 145px,left 186px,left 213px,left 238px,left 291px,100% 331px,81% 331px,60% 331px,36% 331px;
+            padding-top: 34.5%;
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            right: -50%;
+            bottom: -50%;
+            transform: rotate(45deg);
+            background-image: linear-gradient(90deg,rgba(255,255,255,0) 20%,rgba(255,255,255,0.8) 50%,rgba(255,255,255,0) 80%);
+            background-size: 60% 100%;
+            background-position: -100% 0;
+            background-repeat: no-repeat;
+            animation: skeletonloading 1.5s infinite .2s;
+        }
+    }
+
+    .skel-tab {
+        &::before {
+            background-image: linear-gradient(#f4f4f4 40px,transparent 0),linear-gradient(#f4f4f4 40px,transparent 0),linear-gradient(#f4f4f4 40px,transparent 0),linear-gradient(#f4f4f4 14px,transparent 0),linear-gradient(#f4f4f4 14px,transparent 0),linear-gradient(#f4f4f4 14px,transparent 0),linear-gradient(#f4f4f4 14px,transparent 0);
+            background-size: 100px 40px,100px 40px,100px 40px,100% 14px,100% 14px,100% 14px,100% 14px;
+            background-position: 0 0,120px 0,240px 0,0 70px,0 100px,0 130px,0 160px;
+        }
+        &::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            right: -50%;
+            bottom: -50%;
+            background-image: linear-gradient(135deg,rgba(255,255,255,0) 20%,rgba(255,255,255,0.8) 50%,rgba(255,255,255,0) 80%);
+            transform: none;
+            animation-duration: 2s;
+            background-size: 60% 100%;
+            background-position: -100% 0;
+            background-repeat: no-repeat;
+            animation: skeletonloading 1.5s infinite .2s;
+        }
+    }
+
+    .skel-vertical {
+        &::before {
+            padding-top: 85% !important;
+            background-size: 79% 100%,19% 23%,19% 23%,19% 23%,19% 23%;
+            background-position: 100% 0,0 0,0 33.3333%,0 66.6666%,0 100%;
+            background-image: linear-gradient(#f4f4f4 100%,transparent 0),linear-gradient(#f4f4f4 100%,transparent 0),linear-gradient(#f4f4f4 100%,transparent 0),linear-gradient(#f4f4f4 100%,transparent 0),linear-gradient(#f4f4f4 100%,transparent 0);
+        }
+    }
+
+    .skel-pro-single .skel-product-gallery,
+    &.horizontal .skel-pro-single .skel-product-gallery {
+        &:before {
+            padding-top: 120%;
+            min-height: 480px;
+            background-size: 100% 78%, 18% 16%, 18% 16%, 18% 16%, 18% 16%;
+            background-position: left 0,0 95%,calc(20% * 100 / (100 - 18)) 95%,calc(40% * 100 / (100 - 18)) 95%,calc(60% * 100 / (100 - 18)) 95%;
+        }
+    }
+
+    &.product-intro.center-mode .entry-summary1:before {
+        background-position: center 0,center 35px,center 65px,center 105px,calc(12% * 100 / (100 - 82)) 185px,calc(12% * 100 / (100 - 68)) 175px,calc(12% * 100 / (100 - 82)) 245px,calc(12% * 100 / (100 - 68)) 235px
+    }
+
+    &.product-intro.center-mode .entry-summary2:before {
+        background-position: calc(12% * 100 / (100 - 68)) 10px,calc(12% * 100 / (100 - 82)) 0,calc(12% * 100 / (100 - 50)) 60px,calc(12% * 100 / (100 - 85)) 70px,left 145px,100% 150px
+    }
+
+    .skel-pro-single {
+        margin-bottom: 2rem;
+
+        .entry-summary {
+            margin-bottom: 0;
+
+            .col-md-12 + .col-md-12:before {
+                content: none;
+            }
+        }
+
+        .entry-summary1:before {
+            margin-bottom: 2rem;
+            min-height: 275px;
+            background-size: 50% 25px, 24% 20px, 34% 30px, 100% 50px, 10% 20px, 22% 40px, 10% 20px, 22% 40px;
+            background-position: left 0,left 35px,left 65px,left 105px,left 185px,calc(12% * 100 / (100 - 22)) 175px,left 245px,calc(12% * 100 / (100 - 22)) 235px;
+        }
+
+        .entry-summary2:before {
+            margin-bottom: 2rem;
+            min-height: 185px;
+            background-size: 10% 20px, 22% 40px, 34% 40px, 20% 20px, 40% 40px, 34% 30px;
+            background-position: left 10px,calc(12% * 100 / (100 - 22)) 0,left 60px,calc(42% * 100 / (100 - 20)) 70px,left 145px,100% 150px;
+        }
+
+        .entry-summary3:before {
+            margin-top: 3rem;
+            min-height: 390px;
+        }
+
+        &.gallery {
+            .skel-product-gallery:before {
+                min-height: 0;
+                padding-top: 33%;
+                background-size: 33% 100%, 33% 100%, 33% 100%;
+                background-position: left 0,calc(34% * 100 / (100 - 33)) 0,calc(68% * 100 / (100 - 33)) 0;
+            }
+
+            .entry-summary1::before {
+                background-size: 50% 25px, 24% 20px, 34% 30px, 60% 50px, 10% 20px, 22% 40px, 10% 20px, 22% 40px;
+                background-position: center 0,center 35px,center 65px,center 105px,36% 185px,calc(45% * 100 / (100 - 22)) 175px,36% 245px,calc(45% * 100 / (100 - 22)) 235px;
+            }
+
+            .entry-summary2::before {
+                background-size: 22% 40px, 34% 40px, 20% 20px, 40% 40px, 34% 30px;
+                background-position: 22% 0,calc(44% * 100 / (100 - 34)) 0,center 60px,center 100px,center 160px
+            }
+
+            .entry-summary3::before {
+                background-size: 22% 40px, 34% 40px, 20% 20px, 40% 40px, 34% 30px;
+                background-position: 22% 0,calc(44% * 100 / (100 - 34)) 0,center 60px,center 100px,center 160px
+            }
+        }
+
+        &.sticky {
+            padding-bottom: 3rem;
+            border-bottom: 1px solid #ebebeb;
+            margin-bottom: 5rem;
+
+            .accordion {
+                width: 100%;
+                text-align: left;
+            }
+
+            .skel-product-gallery:before {
+                min-height: 550px;
+                padding-top: 270%;
+                background-size: 100% 32.5%, 100% 32.5%, 100% 32.5%;
+                background-position: left 0,left calc(34% * 100 / (100 - 32)),left calc(68% * 100 / (100 - 32));
+            }
+
+            .entry-summary2:before {
+                min-height: 185px;
+                background-size: 10% 20px, 22% 40px, 34% 40px, 20% 20px, 40% 40px, 34% 30px;
+                background-position: left 10px,calc(12% * 100 / (100 - 22)) 0,left 60px,calc(42% * 100 / (100 - 20)) 70px,left 145px,100% 150px;
+            }
+        }
+
+        &.masonry_sticky .skel-product-gallery:before {
+            padding-top: 200%;
+            background-size: 100% 50%, 49% 23%, 49% 18%, 49% 30%, 49% 25%;
+            background-position: right 0,0 calc(51% * 100 / (100 - 23)),right calc(51% * 100 / (100 - 18)),0 calc(75% * 100 / (100 - 30)),right calc(70% * 100 / (100 - 25));
+        }
+
+    // quickview
+        .product-lg,
+        .product-sm,
+        .product-real-detail {
+            display: none;
+        }
+
+        .owl-stage {
+            display: flex;
+        }
+
+        .sidebar-product {
+            display: none;
+        }
+
+        &.loaded {
+            .product-real-detail {
+                display: block;
+            }
+
+            .product-lg {
+                display: block;
+            }
+
+            .product-sm {
+                display: flex;
+            }
+
+            .entry-summary,
+            .skel-product-gallery {
+                display: none;
+            }
+
+            .product-gallery, .product-details {
+                display: block;
+            }
+
+            .skel-widget {
+                display: none;
+            }
+
+            .sidebar-product {
+                display: block;
+            }
+        }
+    }
+
+    // product-extended
+        .product-main-image {
+            width: 100%;
+        }
+
+    // product-gallery
+        .skel-pro-single.gallery {
+            .owl-stage {
+                // width: 100% !important;
+            }
+        }
+
+        .skel-pro-single.gallery.loaded {
+            .owl-item {
+                flex: none;
+            }
+        }
+
+    .skel-post {
+        margin-bottom: 5rem;
+
+        &:before {
+            padding-top: calc(13% + 360px);
+            background-size: 100% calc(138% - 336px),0 64px,67% 31px,100% 19px,100% 16px,39% 16px;
+            background-position: left -3px,left calc(176% - 344px + 20px),0% calc(133.5% - 341px + 76px),70% calc(135% - 340px + 105px),35.5% calc(101% - 342px + 260px),0 calc(101% - 340px + 295px);
+        }
+    }
+
+    .skel-single-post {
+
+        &:before {
+            padding-top: calc(60.5% + 360px);
+            background-size: 100% calc(114% - 360px),4.5% 70px,39% 30px,100% 20px,53% 20px,100% 20px;
+            background-position: left 0,left calc(122% - 336px + 20px),10% calc(110.5% - 342px + 76px),0% calc(109% - 277px + 105px),12.5% calc(94% - 342px + 260px),59% calc(98% - 340px + 295px);
+        }
+    }
+
+    .skel-post-mask {
+        margin-bottom: 2rem;
+
+        &:before {
+            padding-top: 60%;
+            background-size: 100% 100%;
+            background-position: left 0;
+        }
+    }
+
+    .skel-cat:before {
+        content: '';
+        display: block;
+        padding-top: calc(100% + 60px);
+        background-repeat: no-repeat;
+        background-image: linear-gradient(#f4f4f4 100%, transparent 0),linear-gradient(#f4f4f4 100%, transparent 0);
+        background-size: 100% 75%, 60% 20px;
+        background-position: left 0,center calc(75% + 30px);
+    }
+
+    &.post-mask:before {
+        content: none;
+    }
+
+    .skel-pro-single:not(.gallery) {
+        .owl-item {
+            flex: 0 0 100%;
+            width: 100%;
+        }
+
+        &.loaded {
+            .owl-item {
+                flex: none;
+            }
+        }
+    }
+
+    &.loaded.skel-shop-products {
+        .skel-pro,
+        .skel-single-post,
+        .skel-post  {
+            display: none;
+        }
+    }
+
+    .skel-shop-sidebar:before {
+        background-image: linear-gradient(#f4f4f4 20px,transparent 0),linear-gradient(#f4f4f4 30px,transparent 0),linear-gradient(#f4f4f4 14px,transparent 0),linear-gradient(#f4f4f4 30px,transparent 0),linear-gradient(#f4f4f4 14px,transparent 0),linear-gradient(#f4f4f4 30px,transparent 0),linear-gradient(#f4f4f4 14px,transparent 0),linear-gradient(#f4f4f4 30px,transparent 0),linear-gradient(#f4f4f4 14px,transparent 0),linear-gradient(#f4f4f4 30px,transparent 0),linear-gradient(#f4f4f4 14px,transparent 0),linear-gradient(#f4f4f4 30px,transparent 0),linear-gradient(#f4f4f4 14px,transparent 0);
+        background-size: 55% 20px,30px 30px,100% 14px,30px 30px,60% 14px,30px 30px,80% 14px,30px 30px,50% 14px,30px 30px,100% 14px,30px 30px,70% 14px;
+        background-position: left 5px,left 50px,45px 58px,left 95px,45px 103px,left 140px,45px 148px,left 185px,45px 193px,left 230px,45px 238px,left 275px,45px 283px;
+    }
+
+    //product magnifier, detail, tab
+    .product-slider-container, .product-single-carousel, .prod-thumbnail, .product-single-details, .product-single-tabs {
+        max-height: 0;
+        visibility: hidden;
+    }
+
+    .entry {
+        display: none;
+    }
+
+    &.loaded.skel-shop-products {
+        .product-slider-container, .product-single-carousel, .product-single-details, .product-single-tabs {
+            max-height: none;
+            visibility: visible;
+        }
+
+        .entry {
+            display: block;
+        }
+
+        .prod-thumbnail {
+            max-height: none;
+            visibility: visible;
+        }
+    }
+
+    &.loaded .skel-post {
+        display: none;
+    }
+}
+
+.product-loading-overlay {
+	&:before,
+	&:after {
+		content: '';
+		display: block;
+	}
+
+	&:before {
+		padding-top: 155.2%;
+		background-repeat: no-repeat;
+		background-image: linear-gradient(#f4f4f4 105%, transparent 0), linear-gradient(#f4f4f4 12px, transparent 0), linear-gradient(#f4f4f4 16px, transparent 0), linear-gradient(#f4f4f4 12px, transparent 0), linear-gradient(#f4f4f4 16px, transparent 0);
+		background-size: 100% 72.5%, 50% 12px, 70% 16px, 50% 12px, 40% 16px;
+		background-position: left 0, left calc(70% + 31px), left calc(70% + 54px), left calc(70% + 78px), left calc(70% + 104px);
+	}
+
+	&:after {
+		content: "";
+		display: block;
+		position: absolute;
+		width: 40px;
+		height: 40px;
+		top: calc(35% - 20px);
+		left: calc(50% - 20px);
+		-webkit-animation: spin 650ms infinite linear;
+		animation: spin 650ms infinite linear;
+		border-radius: 75%;
+		border:2px solid var(--primary-color) !important;
+		border-bottom-color: transparent !important;
+		z-index: 3;
+	}
+}
+
+.skeleton-body {
+    .skel-pro-list:not(.skel-pro) {
+        position: relative;
+        overflow: hidden;
+        width: 100%;
+        
+        &::before {
+            content: "";
+            display: block;
+            width: 90%;
+            background-repeat: no-repeat;
+            background-image: linear-gradient(#f4f4f4 100%,transparent 0),linear-gradient(#f4f4f4 100%,transparent 0),linear-gradient(#f4f4f4 100%,transparent 0),linear-gradient(#f4f4f4 100%,transparent 0),linear-gradient(#f4f4f4 100%,transparent 0),linear-gradient(#f4f4f4 100%,transparent 0),linear-gradient(#f4f4f4 100%,transparent 0),linear-gradient(#f4f4f4 100%,transparent 0),linear-gradient(#f4f4f4 100%,transparent 0),linear-gradient(#f4f4f4 100%,transparent 0),linear-gradient(#f4f4f4 100%,transparent 0),linear-gradient(#f4f4f4 100%,transparent 0),linear-gradient(#f4f4f4 100%,transparent 0),linear-gradient(#f4f4f4 100%,transparent 0),linear-gradient(#f4f4f4 100%,transparent 0),linear-gradient(#f4f4f4 100%,transparent 0),linear-gradient(#f4f4f4 100%,transparent 0),linear-gradient(#f4f4f4 100%,transparent 0),linear-gradient(#f4f4f4 100%,transparent 0);
+            padding-top: max(29.4%,8rem);
+            background-size: 9.5rem 11.3rem,100% 14px,calc(50% - 7.5rem) 14px,calc(80% - 11rem) 16px,calc(86% - 11rem) 12px;
+            background-position: 0px 50%,11rem calc(50% - 35px),11rem calc(50% - 14px),11rem calc(50% + 12px),11rem calc(50% + 38px);
+        }
+    
+        &:after {
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            right: -50%;
+            bottom: -50%;
+            background-image: linear-gradient(90deg, rgba(255, 255, 255, 0) 20%, rgba(255, 255, 255, 0.8) 50%, rgba(255, 255, 255, 0) 80%);
+            -webkit-animation: skeletonloading 1.5s infinite;
+            animation: skeletonloading 1.5s infinite;
+        }
+    }
+
+    &.loaded .skel-pro-list:not(.skel-pro) {
+        display: none;
+    }
+}
+
+.quickView-content.horizontal .skeleton-body .skel-pro-single .skel-product-gallery::before {
+    padding-top: 120%;
+    min-height: 480px;
+    background-size: 100% 78%, 18% 16%, 18% 16%, 18% 16%, 18% 16%;
+    background-position: left 0,0 95%,calc(20% * 100 / (100 - 18)) 95%,calc(40% * 100 / (100 - 18)) 95%,calc(60% * 100 / (100 - 18)) 95%;
+}
+
+@media (max-width: 767px) {
+    .skeleton-body .skel-pro-list:before {
+        padding-top:calc(49% + 140px);
+        background-size: 49% calc(100% - 140px),20% 15px,25% 20px,100% 80px,10% 15px,15% 15px,40% 30px,49% 40px;
+        background-position: left 0,left calc(100% - 120px + 15px),left calc(100% - 120px + 50px),left calc(100% - 120px + 160px),calc(51% * 100 / (100 - 10)) calc(50% - 100px - 82px + 15px / 2),calc(51% * 100 / (100 - 15)) calc(50% - 100px - 82px + 15px / 2 + 30px),calc(55.5% * 100 / (100 - 40)) calc(50% - 100px - 82px + 30px / 2 + 80px),calc(51% * 100 / (100 - 49)) calc(50% - 100px - 82px + 40px / 2 + 125px)
+    }
+}
+
+@media (min-width: 992px), (max-width: 767px) and (min-width: 576px) {
+    .skeleton-body .skel-pro-single .skel-product-gallery:before {
+        padding-top:80%;
+        min-height: 480px;
+        background-size: 18% 21%, 18% 21%, 18% 21%, 18% 21%, 80% 100%;
+        background-position: left 0,left calc(23% * 100 / (100 - 21)),left calc(46% * 100 / (100 - 21)),left calc(69% * 100 / (100 - 21)),calc(20% * 100 / (100 - 80)) 0;
+    }
+}
+
+@media (max-width: 991px) {
+    .skeleton-body .skel-pro-single.gallery .skel-product-gallery:before {
+        padding-top:48%;
+        background-size: 48% 100%, 48% 100%;
+        background-position: left 0,calc(52% * 100 / (100 - 48)) 0;
+    }
+}
+
+@media (max-width: 575px) {
+    .skeleton-body .skel-pro-single.gallery .skel-product-gallery:before {
+        padding-top:100%;
+        background-size: 100% 100%;
+        background-position: left 0
+    }
+}
+
+@media (min-width: 576px) {
+    .skeleton-body .skel-pro-list.small-pro:before {
+        padding-top:calc(max(25%, calc(338 / 300 * 280px)));
+        background-size: 28rem calc(338 / 300 * 280px),20% 10px,50% 18px,25% 20px,25% 12px,calc(100% - 28rem) 50px,123px 50px;
+        background-position: 0 50%,30rem calc(50% - 95px),30rem calc(50% - 73px),30rem calc(50% - 46px),30rem calc(50% - 21px),30rem calc(50% + 20px),30rem calc(50% + 95px)
+    }
+}
+
+@media (min-width: 768px) {
+    .skeleton-body .skel-post-list {
+        margin-bottom:7rem;
+
+        &:before {
+            padding-top: 28.125%;
+            min-height: 320px;
+            background-size: 44% 100%, 20% 20px, 30% 35px, 10% 20px, 53% 100px, 10% 20px;
+            background-position: left 0,calc(47% * 100 / (100 - 20)) calc(50% - 130px - 20px / 2 + 20px),calc(47% * 100 / (100 - 30)) calc(50% - 130px - 35px / 2 + 70px),calc(47% * 100 / (100 - 10)) calc(50% - 130px - 20px / 2 + 105px),calc(47% * 100 / (100 - 53)) calc(50% - 130px - 100px / 2 + 220px),calc(47% * 100 / (100 - 10)) calc(50% - 130px - 20px / 2 + 245px);
+        }
+    }
+}
+
+@keyframes skeletonloading {
+    from {
+        transform: skewX(-45deg) translateX(-80%)
+    }
+
+    to {
+        transform: skewX(-45deg) translateX(80%)
+    }
+}
+
+.mfp-container .mfp-content .quickView-content {
+    padding: 4rem;
+    background-color: #222;
+
+    .skel-pro-single {
+        margin-bottom: -2rem
+    }
+}

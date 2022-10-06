@@ -1,0 +1,35 @@
+.ecommerce-variation:not(:last-child) {
+    margin-bottom: 1rem;
+}
+
+.ecommerce-variation-header {
+    padding: .5rem;
+    border: 1px solid #dadada;
+    border-width: 1px 0;
+
+    .ecommerce-variations-group & {
+        cursor: pointer;
+    }
+}
+
+.ecommerce-variation-content {
+    display: none;
+    border-bottom: 1px solid #dadada;
+    padding: 1rem;
+
+    .checkbox-custom:last-child {
+        margin-bottom: 7px;
+    }
+}
+
+.variation-img .btn {
+    width: 72px;
+    height: 72px;
+    padding: 5px;
+    
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}

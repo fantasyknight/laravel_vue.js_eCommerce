@@ -1,0 +1,151 @@
+// My orders
+.order-table-container,
+.order-detail-container,
+.download-table-container {
+    border-top: 4px solid var(--primary-color);
+    padding: 30px 20px 10px 20px;
+    box-shadow: 0 2px 4px 0px rgba(0,0,0,0.05);
+
+    .btn {
+        padding: 8px 12px;
+        font-size: 14px;
+        font-weight: 400;
+    }
+}
+
+.table.table-order,
+.table.table-downloads {
+    font-size: 14px;
+
+    thead th {
+        border-top: none;
+        border-bottom-width: 1px;
+        padding: 1rem;
+        font-weight: 600;
+    }
+
+    tbody td {
+        vertical-align: middle;
+    }
+}
+
+.order-old-price, .product-old-count {
+    font-size: .9em;
+    text-decoration: line-through;
+}
+
+.order-new-price {
+    box-shadow: 0 1px 0 0 rgba(0,0,0,0.7);
+}
+
+.product-new-count {
+    text-decoration: underline;
+}
+
+.order-info {
+    font-size: 1.4rem;
+
+    .order-id, 
+    .order-date, 
+    .order-status {
+        color: #000;
+    }
+}
+
+.order-detail-container {
+    .title {
+        font-size: 1.8rem;
+        font-weight: 400;
+        text-transform: uppercase;
+    }
+}
+
+.table.table-order-detail {
+    th {
+        font-weight: 600;
+    }
+
+    th, td {
+        padding: 1rem;
+        font-size: 1.4rem;
+        line-height: 24px;
+        vertical-align: middle;
+    }
+
+    thead th {
+        border: none;
+    }
+        
+    .product-title {
+        display: inline;
+        color: var(--primary-color);
+        font-size: 1.4rem;
+        font-weight: 400;
+    }
+
+    .product-count {
+        color: var(--primary-color);
+    }
+}
+
+.order-update {
+    padding: 2rem;
+    background-color: #f5f7f7;
+
+    & + & {
+        margin-top: 1rem;
+    }
+
+    .order-update-time {
+        font-weight: 700;
+    }
+
+    p {
+        margin-bottom: 0;
+        font-weight: 300;
+    }
+}
+
+.order-detail-container address {
+    margin-bottom: 2rem;
+    line-height: 1.75;
+
+    p:last-child {
+        margin-bottom: 0;
+    }
+}
+
+
+@include mq(md, max) {
+    .table.table-order thead {
+        display: none;
+    }
+
+    .table.table-order {
+        td {
+            display: block;
+            border-top: none;
+            text-align: center;
+        }
+
+        .product-thumbnail img {
+            display: inline;
+        }
+
+        tbody tr {
+            position: relative;
+            display: block;
+            padding: 10px 0;
+
+            &:not(:first-child) {
+                border-top: 1px solid #ddd;
+            }
+        }
+
+        .product-remove {
+            position: absolute;
+            top: 12px;
+            right: 0;
+        }
+    }
+}

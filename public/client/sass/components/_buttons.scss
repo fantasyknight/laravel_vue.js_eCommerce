@@ -1,0 +1,209 @@
+// Buttons
+
+@include set-default(
+	(
+		btn: (
+			padding: 1.85rem 4.2rem,
+			line-height: 1.429,
+			border-radius: var(--border-radius),
+
+			font: (
+				size: var(--button-font-size),
+				weight: 700,
+				family: var(--second-font-family)
+			)
+		)
+	)
+);
+
+// 1. Button Base
+.btn {
+	transition: all .3s;
+	text-transform: uppercase;
+	@include css( padding, btn, padding );
+	@include css( border-radius, btn, border-radius );
+	@include css( font-size, btn, font, size );
+	@include css( font-weight, btn, font, weight );
+	@include css( font-family, btn, font, family );
+	@include css( line-height, btn, line-height );
+
+	&:focus {
+		box-shadow: none;
+	}
+
+	&.disabled {
+		pointer-events: none;
+	}
+}
+
+// 2. Size
+
+// 2.1) Small
+.btn-sm {
+	padding: 1em 1.6em;
+	font-size: 1.2rem;
+}
+
+// 2.2) Medium
+.btn-md {
+	padding: 1em 2.2em;
+	font-size: 1.3rem;
+}
+
+// 2.3) Large
+.btn-lg {
+	padding: 1em 2.15em;
+	font-size: 1.4rem;
+}
+
+// 2.4) Extra Large
+.btn-xl {
+	padding: 1.125em 2.75em;
+	font-size: 1.125em;
+}
+
+// 3. Icon
+.btn-icon-left i {
+	padding-right: .7rem;
+}
+
+.btn-icon-right i {
+	padding-left: .7rem;
+}
+
+.btn-shop {
+	padding: .8rem 1.2rem;
+	background: #f4f4f4;
+	color: var(--headings-text);
+	font-weight: 600;
+	text-transform: uppercase;
+
+	&:hover {
+		background-color: var(--primary-color);
+		color: #fff;
+	}
+}
+
+// 4. Skin
+
+.btn-primary {
+	@include button-variant(#fff, var(--primary-color), var(--primary-color), #fff, var(--btn-primary-hover), var(--btn-primary-active-bg), var(--btn-primary-active-border));
+}
+
+.btn-outline {
+	@include button-outline-variant(#ccc, var(--primary-color), transparent, #ccc, var(--primary-color));
+}
+
+.btn-outline-secondary {
+	@include button-outline-variant(#777, #fff, var(--primary-color), #ccc, var(--primary-color));
+}
+
+.btn-dark {
+	@include button-variant( #fff, var(--primary-color-dark), var(--primary-color-dark), #fff, var(--btn-dark-hover), var(--btn-dark-active-bg), var(--btn-dark-active-border));
+}
+
+.btn-gray {
+	@include button-variant(var(--primary-color-dark), #dbdbdb, #dbdbdb, #fff, #dbdbdb, #dbdbdb);
+}
+
+.btn-link {
+	padding-top: 0;
+	padding-bottom: 0;
+	color: var(--primary-color);
+	font-family: var(--font-family);
+	font-size: 13px;
+	letter-spacing: 0;
+	text-transform: initial;
+
+	&:hover,
+	&:focus {
+		color: var(--primary-color);
+		text-decoration: underline;
+	}
+}
+
+// 5. Social Button
+
+.btn-social-login {
+	display: flex;
+	margin-right: 10px;
+	margin-left: 10px;
+	background-color: var(--primary-color);
+	font-family: var(--second-font-family);
+	text-decoration: none;
+	text-transform: uppercase;
+
+	span, i {
+		color: #fff;
+	}
+
+	i {
+		margin-top: -1px;
+		padding-right: 6px;
+	}
+}
+
+.btn-facebook {
+	background: #3a589d;
+}
+
+.btn-gplus {
+	background: #dd4e31;
+}
+
+.btn-twitter {
+	background: #1aa9e1;
+}
+
+.owl-dots .owl-dot,
+.owl-nav .owl-prev,
+.owl-nav .owl-next {
+	outline: none;
+}
+
+a:focus {
+	outline: none;
+}
+
+@keyframes spin {
+	0% {
+		transform: rotate(0deg);
+	}
+
+	100% {
+		transform: rotate(359deg);
+	}
+}
+
+.mfp-container .mfp-preloader,
+.porto-loading-icon {
+	content: '';
+	display: inline-block;
+	z-index: 2;
+	width: 40px;
+	height: 40px;
+	margin: 0 auto;
+	border: 2px solid transparent;
+	border-radius: 50%;
+	border-top-color: var(--primary-color);
+	border-image: none;
+	text-indent: -9999px;
+	-webkit-animation: spin .75s infinite linear;
+	animation: spin .75s infinite linear;
+}
+
+.mfp-container .mfp-preloader:before,
+.porto-loading-icon:before {
+	position: absolute;
+	top: -2px;
+	right: 0;
+	left: -2px;
+	width: inherit;
+	height: inherit;
+	border: inherit;
+	border-radius: inherit;
+	border-top-color: inherit;
+	content: '';
+	-webkit-animation: spin 1.5s infinite ease;
+	animation: spin 1.5s infinite ease;
+}

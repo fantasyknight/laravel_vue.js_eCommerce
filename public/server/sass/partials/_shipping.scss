@@ -1,0 +1,19 @@
+.table.table-shipping-methods {
+    border: 1px solid #dee2e6;
+
+    th, td {
+        vertical-align: middle;
+    }
+}
+
+.btn.add-shipping-method {
+    line-height: 1.7;
+}
+
+#minOrderAmount {
+    display: none;
+}
+
+.input-group.add-shipping-method {
+    max-width: 250px;
+}

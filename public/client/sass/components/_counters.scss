@@ -1,0 +1,23 @@
+// Counters
+.count-container {
+	margin-bottom: 3.5rem;
+}
+
+.count-wrapper {
+	margin-bottom: .9rem;
+	color: var(--headings-text);
+	font: 400 2.8rem / 1 var(--second-font-family);
+	text-transform: uppercase;
+}
+
+.count-title {
+	margin-bottom: 0;
+	color: var(--body-text);
+	font: 600 1.6rem / 1 var(--font-family);
+}
+
+@include mq(lg) {
+	.count-wrapper {
+		font-size: 3.6rem;
+	}
+}

@@ -1,0 +1,119 @@
+.login-container {
+    margin-top: 3.9rem;
+
+    .heading .title {
+        margin-bottom: 0;
+        font-size: 2.2rem;
+        letter-spacing: -.01em;
+    }
+
+    form {
+        margin-bottom: 64px;
+
+        label {
+            margin-bottom: .7rem;
+            color: var(--body-text);
+            font-family: var(--font-family);
+            font-size: 1.4rem;
+            font-weight: 400;
+        }
+
+        .form-input {
+            margin-bottom: 1.7rem;
+            padding-top: .8rem;
+            padding-bottom: .8rem;
+            border-color: #e7e7e7;
+            line-height: 32px;
+        }
+
+        .btn {
+            font-family: var(--font-family);
+            font-size: 1.6rem;
+        }
+
+        .form-footer {
+            margin-top: 1.8rem;
+            margin-bottom: 2.8rem;
+        }
+    }
+
+    .custom-checkbox {
+        padding-left: 2.5rem;
+
+        .custom-control-label {
+            margin-bottom: 0;
+            font-size: 1.2rem;
+        }
+    }
+
+    .forget-password {
+        font-size: 1.4rem;
+        font-weight: 600;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+    .col-lg-6:first-child .form-footer {
+        margin-top: 1.3rem;
+    }
+}
+
+.reset-password-container {
+    padding-top: 3.9rem;
+    padding-bottom: 3rem;
+
+    .feature-box .feature-box-content {
+        padding-bottom: 31px;
+    }
+
+    p {
+        margin-bottom: 1.7rem;
+        font-size: 1.4rem;
+        line-height: 1.75;
+    }
+
+    label {
+        margin-bottom: .7rem;
+        color: inherit;
+        font-family: var(--font-family);
+        font-size: 1.4rem;
+    }
+
+    input {
+        line-height: 1.5;
+    }
+
+    .form-footer {
+        margin-top: 1.5rem;
+
+        a {
+            margin-top: 4px;
+            font-size: 1.4rem;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+
+        .btn {
+            padding: .8rem 1.2rem;
+            font-family: var(--font-family);
+            font-size:1.4rem;
+            line-height: 21px;
+        }
+    }
+}
+
+@include mq(lg) {
+    .login-container {
+        .col-lg-6:first-child {
+            padding-right: 3.4rem;
+        }
+
+        .col-lg-6:last-child {
+            padding-left: 3.4rem;
+        }
+    }
+}

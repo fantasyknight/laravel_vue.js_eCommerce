@@ -1,0 +1,85 @@
+// Footer Three
+
+.footer.footer-three {
+    color: #a8a8a8;
+    background: #222529;
+    line-height: 24px;
+
+    .footer-middle {
+        padding-top: 6.6rem;
+        padding-bottom: 3.2rem;
+    }
+
+    .widget-title {
+        font-size: 1.5rem;
+        font-weight: 700;
+        margin-bottom: 1.3rem;
+    }
+
+    .widget-newsletter {
+        padding-bottom: 3.5rem;
+        border-bottom: 1px solid #313438;
+
+        p {
+            max-width: 360px;
+            line-height: 1.6;
+        }
+
+        form {
+            border-radius: 5rem;
+            background: #292c30;
+            padding-left: 2.5rem;
+            overflow: hidden;
+        }
+
+        .form-control {
+            height: 4.8rem;
+            padding: .8rem 1rem .8rem 0;
+            border: 0;
+            color: #777;
+            background: #292c30;
+            font-size: 1.2rem;
+            box-shadow: none;
+            outline: none;
+
+            @include only_for_ie() {
+                flex: 1;
+            }
+
+            &::placeholder {
+                color: #999;
+            }
+        }
+
+        .btn {
+            font-family: var(--font-family);
+            padding: 1rem 2.3rem;
+            border-radius: 0 5rem 5rem 0;
+            font-size: 1.2rem;
+        }
+    }
+
+    .contact-info li {
+        margin-bottom: .5rem;
+    }
+
+    .social-icon {
+        border: 1px solid #313438;
+        font-size: 1.2rem;
+    }
+
+    .footer-bottom {
+        font-size: 12px;
+        color: #777;
+        padding-bottom: 1.5rem;
+
+        .container:before {
+            content: '';
+            display: block;
+            flex: 0 0 100%;
+            -ms-flex: 0 0 100%;
+            border-top: 1px solid #313438;
+            padding-top: 1.5rem;
+        }
+    }
+}

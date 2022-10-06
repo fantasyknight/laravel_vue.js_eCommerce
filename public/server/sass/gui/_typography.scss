@@ -1,0 +1,72 @@
+/* Paragraphs */
+p {
+	color: $color-font-default;
+	line-height: 24px;
+	margin: 0 0 20px;
+	&.featured {
+		font-size: 1.6em;
+		line-height: 1.5em;
+	}
+	&.lead {
+		line-height: 1.6rem;
+	}
+	.alternative-font {
+		display: inline-block;
+		margin-top: -15px;
+		position: relative;
+		top: 3px;
+		margin-bottom: -6px;
+	}
+}
+
+/* Drop Caps */
+p.drop-caps {
+	&:first-letter {
+		float: $left;
+		font-size: 75px;
+		line-height: 60px;
+		padding: 4px;
+		margin-#{$right}: 5px;
+		margin-top: 5px;
+		font-family: Georgia;
+	}
+
+	&.drop-caps-style-2:first-letter {
+		background-color: #CCC;
+		color: #FFF;
+		padding: 6px;
+		margin-#{$right}: 5px;
+		border-radius: 4px;
+	}
+}
+
+/* Default Font Style */
+.default-font {
+	font-family: $font-primary;
+}
+
+/* Alternative Font Style */
+.alternative-font {
+	color: #CCC;
+	font-family: $font-secondary;
+	font-size: 1.6em;
+}
+
+/* Highlight */
+.highlight {
+	color: #FFF;
+	padding: 3px 6px;
+}
+
+/* Text Color */
+.text-color-dark {
+	color: $color-dark !important;
+}
+
+.text-color-light {
+	color: #fff !important;
+}
+
+.text-color-primary {
+	color: $color-primary !important;
+}

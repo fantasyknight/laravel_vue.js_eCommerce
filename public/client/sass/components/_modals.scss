@@ -1,0 +1,124 @@
+// Modals
+.modal {
+	form {
+		margin: 0;
+
+		.form-group {
+			max-width: 480px;
+		}
+
+		.form-control {
+			max-width: 100%;
+		}
+	}
+}
+
+.modal-body {
+	padding: 1.5rem;
+}
+
+.modal-content {
+	border-radius: 0;
+	box-shadow: 0 0 12px 2px rgba(0, 0, 0, .35);
+}
+
+.modal-header,
+.modal-footer {
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-align: center;
+	align-items: center;
+	height: 80px;
+	padding-right: 1.5rem;
+	padding-left: 1.5rem;
+}
+
+.modal-title {
+	font-weight: 400;
+}
+
+.close {
+	font-size: 2.2rem;
+}
+
+div.vm--modal {
+	height: auto !important;
+	overflow-y: auto;
+	border-radius: 0;
+
+	&::-webkit-scrollbar {
+        height: 10px;
+        width: 7px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: #ebebeb;
+        border-radius: 10px;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: #fff;
+        border-radius: 10px;
+        margin: 8px;
+        width : 100%;
+    }
+}
+
+div.vm--container {
+	z-index: 2000;
+}
+
+.vm--container {
+	.product-title {
+		color: #555;
+	}
+
+	.product-single-details .product-title {
+		color: #555;
+	}
+}
+
+div.vm--overlay {
+	background-color: #0b0b0b;
+	opacity: .8;
+}
+
+@include mq(sm) {
+	.modal-content {
+		margin-top: 20px;
+		margin-bottom: 20px;
+	}
+
+	.modal-body {
+		max-height: calc(100vh - 210px);
+		padding-top: 2rem;
+		overflow-y: auto;
+	}
+
+	.modal-header,
+	.modal-footer,
+	.modal-body {
+		padding-right: 2em;
+		padding-left: 2rem;
+	}
+}
+
+@include mq(lg) {
+	.modal-dialog {
+		max-width: 800px;
+	}
+
+	.modal-header,
+	.modal-footer,
+	.modal-body {
+		padding-right: 3rem;
+		padding-left: 3rem;
+	}
+}
+
+@include mq(xs, max) {
+	.modal-open,
+	.modal-open .modal {
+		padding-right: 0 !important;
+	}
+}

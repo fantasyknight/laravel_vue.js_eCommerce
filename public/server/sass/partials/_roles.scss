@@ -1,0 +1,9 @@
+.card.card-roles .card-body {
+    border-top: 1px solid #f3f3f3;
+
+    > .row:not(:last-child) {
+        padding-top: 1.5rem;
+        padding-bottom: 1.5rem;
+        border-bottom: 1px solid #f3f3f3;
+    }
+}

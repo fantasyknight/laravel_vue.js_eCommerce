@@ -1,0 +1,49 @@
+.ecommerce-form {
+	.jstree-icon:not(.jstree-checkbox) {
+		display: none;
+    }
+    
+	.jstree-node {
+		background: none;
+    }
+    
+	.jstree-default .jstree-clicked {
+		box-shadow: none;
+    }
+    
+	.bootstrap-tagsinput .badge {
+		margin-bottom: 5px
+    }
+    
+    .table-downloadable {
+        border: 1px solid #dee2e6;
+
+        thead th {
+            border-bottom-width: 1px;
+        }
+    }
+    
+    .table.table-products .product-img {
+        display: block;
+        max-width: 60px;
+        border: 1px solid  #ebebeb;
+    }
+}
+
+.modal-block.modal-media-gallery {
+    width: 80vw;
+    height: 80vh;
+	max-width: 100%;
+	
+	.card, .card-body, .modal-wrapper,
+	.tabs, .tab-content, .tab-pane,
+	.dropzone {
+		height: 100%;
+	}
+}
+
+@media (max-width: 1199px) {
+    .ecommerce-form .mg-option.radio-custom label {
+        display: none;
+    }
+}

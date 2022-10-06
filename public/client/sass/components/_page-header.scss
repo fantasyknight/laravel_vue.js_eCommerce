@@ -1,0 +1,76 @@
+// Page Header
+
+// # Contents
+// 1. Page Header
+// 2. Page Title
+// 3. Responsive
+
+// # Variables
+@include set-default(
+	(
+		page-header: (
+			color: var(--primary-color-dark),
+		)
+	)
+);
+
+// 1. Page Header
+
+.page-header {
+	padding: 5.5rem 0;
+	@include css(color, page-header, color);
+	background-color: #f4f4f4;
+	text-align: center;
+
+	.breadcrumb {
+		padding-top: .5rem;
+		padding-bottom: 0;
+
+		a {
+			color: var(--primary-color);
+
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+
+		.breadcrumb-item:last-child:before {
+			padding-right: .8rem;
+		}
+	}
+
+	.breadcrumb-nav + & {
+		margin-top: -2rem;
+	}
+}
+
+// 2. Page Title
+
+.page-header h1,
+.page-title {
+	margin-bottom: .4rem;
+	font-size: 2.8rem;
+	font-weight: 700;
+	letter-spacing: -.05em;
+	@include css(color, page-header, color);
+}
+
+// 3. Responsive
+
+@include mq(md) {
+	.page-header {
+
+		.breadcrumb-nav + & {
+			margin-top: -3rem;
+		}
+	}
+}
+
+@include mq(lg) {
+	.page-header {
+
+		.breadcrumb-nav + & {
+			margin-top: -4rem;
+		}
+	}
+}

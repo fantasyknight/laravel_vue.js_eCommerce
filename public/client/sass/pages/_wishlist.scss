@@ -1,0 +1,133 @@
+// Wishlist
+.wishlist-title {
+    margin-top: 5.3rem;
+    margin-bottom: 2.8rem;
+}
+
+.wishlist-table-container {
+    margin-bottom: 5.5rem;
+
+    .table-title {
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+        font-size: 1.3em;
+        font-weight: 400;
+        letter-spacing: -0.7px;
+        line-height: 1.42857;
+        text-transform: uppercase;
+    }
+
+    .wishlist-empty {
+        font-size: 100px;
+        color: #d3d3d4;
+    }
+}
+
+.table.table-wishlist {
+	tr {
+		th {
+            padding: 10px 5px 10px 16px;
+            
+			&.thumbnail-col {
+				width: 10%;
+			}
+
+			&.product-col {
+				width: 29%;
+			}
+
+			&.price-col {
+				width: 13%;
+            }
+            
+            &.status-col {
+                width: 19%;
+            }
+        }
+        
+        td {
+            padding: 20px 5px 23px 16px;
+        }
+    }
+    
+    .product-price {
+        color: inherit;
+        font-size: 1.4rem;
+        font-weight: 400;
+    }
+
+    .price-box {
+        margin-bottom: 0;
+    }
+
+    .stock-status {
+        color: var(--headings-text);
+        font-weight: 600;
+    }
+}
+
+@include mq(md, max) {
+    .wishlist-table-container {
+		border-top: 4px solid var(--primary-color);
+    }
+
+	.table.table-wishlist {
+		border: 1px solid #e7e7e7;
+		border-top: 0;
+		box-shadow: 0 2px 4px 0 rgba(0,0,0,0.05);
+
+		&,
+		tbody{
+			display: block;
+		}
+
+		thead {
+			display: none;
+		}
+
+		tr {
+			td {
+				padding: .5rem 1rem;
+				border-top: 0;
+
+				&.product-col {
+					padding-bottom: .5rem;
+				}
+			}
+		}
+
+		.product-row {
+			display: -ms-flexbox;
+			display: flex;
+			-ms-flex-direction: column;
+			flex-direction: column;
+			justify-content: center;
+            align-items: center;
+            padding: 3rem 0;
+			border-top: 2px solid #ddd;
+
+			&:first-child {
+				border-top: 0;
+			}
+		}
+
+		.product-col {
+			-ms-flex-direction: column;
+			flex-direction: column;
+			-ms-flex-pack: center;
+			justify-content: center;
+			text-align: center;
+
+			.product-image-container {
+				-ms-flex: 0 0 auto;
+				flex: 0 0 auto;
+				margin-right: 0;
+				margin-bottom: 1rem;
+			}
+        }
+        
+        .btn-shop {
+            width: 100%;
+        }
+	}
+}

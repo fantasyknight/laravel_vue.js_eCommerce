@@ -1,0 +1,32 @@
+.account-content {
+    label {
+        margin-bottom: .7rem;
+        color: var(--body-text);
+        font-family: var(--font-family);
+        font-size: 1.4rem;
+        font-weight: 400;
+    }
+
+    .form-input {
+        margin-bottom: 1.7rem;
+        padding-top: .8rem;
+        padding-bottom: .8rem;
+        border-color: #e7e7e7;
+        line-height: 32px;
+    }
+
+    .btn {
+        font-family: var(--font-family);
+        font-size: 1.5rem;
+    }
+}
+
+.change-password {
+    padding: 2.4rem 2.8rem;
+    border: 2px solid #e7e7e7;
+
+    h3 {
+        font-size: 1.6rem;
+        font-family: var(--font-family);
+    }
+}

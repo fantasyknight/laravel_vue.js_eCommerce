@@ -1,0 +1,86 @@
+.card {
+	margin-bottom: 3rem;
+	border: 1px solid #ddd;
+	border-radius: 0;
+	font-size: 1.4rem;
+}
+
+.card-header {
+	@include clearfix;
+	margin: 0;
+	padding: 1.2rem 1.5rem;
+	border-radius: 0;
+	border-color: #ddd;
+	background-color: #f5f5f5;
+	color: #000;
+	font-weight: 700;
+	line-height: 1.5;
+	text-transform: uppercase;
+
+	.card-edit {
+		margin-top: .1rem;
+		float: right;
+		color: var(--primary-color);
+		font-size: 1.3rem;
+		font-weight: 400;
+		text-transform: capitalize;
+	}
+}
+
+.card-body {
+	min-height: 135px;
+	padding: 2rem 1.5rem;
+	border-top: 0;
+	border-radius: 0;
+
+	a {
+		text-decoration: underline;
+	}
+
+	h4 {
+		margin-bottom: .7rem;
+		color: var(--light-text);
+	}
+}
+
+.card.card-accordion {
+	margin-bottom: .5rem;
+	padding: 0;
+	border: 0;
+
+	.card-header {
+		cursor: pointer;
+		position: relative;
+		padding-left: 0;
+		padding-right: 25px;
+		background: transparent;
+		font-family: var(--second-font-family);
+		font-size: 1.6rem;
+		font-weight: 600;
+		letter-spacing: -.025em;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		text-transform: none;
+		white-space: nowrap;
+
+		&:after {
+			content: '\e81c';
+			position: absolute;
+			top: 50%;
+			right: 10px;
+			transform: translateY(-50%);
+			font-family: 'porto';
+		}
+	}
+
+	.card-body {
+		min-height: 0;
+		padding: 0;
+	}
+
+	p {
+		margin-bottom: .4rem;
+		padding: 1.3rem 0;
+		letter-spacing: 0;
+	}
+}
